@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+
+
+const USE_CASES = [
+  { num: '01. DEFENSA', text: 'La información se despliega para fortalecer su infraestructura específica contra vectores identificados.' },
+  { num: '02. ANÁLISIS', text: 'La telemetría anonimizada se agrega para actualizar las firmas de amenazas globales para todos los nodos.' },
+  { num: '03. CUMPLIMIENTO', text: 'Cumplir con los mandatos regulatorios para pistas de auditoría e informes de incidentes de seguridad.' },
+];
+
+const USER_RIGHTS = [
+  { icon: 'shield_person', title: 'Soberanía de Datos', text: 'Mantiene la propiedad total de sus activos de inteligencia generados.' },
+  { icon: 'delete_forever', title: 'Comando de Purgación', text: 'El derecho a activar una eliminación inmediata y no recuperable de todos los registros no regulatorios.' },
+  { icon: 'download_done', title: 'Portabilidad de Extracción', text: 'Exporte sus datos de postura de seguridad en formatos JSON estructurados en cualquier momento.' },
+];
+
+const SYS_STATUS = [
+  { key: 'ENCRYPTION_ENGINE', val: 'OPERATIONAL', tone: 'primary' },
+  { key: 'FIREWALL_STATUS', val: 'ACTIVE', tone: 'primary' },
+  { key: 'DATA_PURGE_CLK', val: 'T-14:22:01', tone: 'secondary' },
+];
+---
+
+<Layout
+  title="Protocolo de Privacidad"
+  description="Protocolo de Privacidad RedBox — Marco táctico de gobernanza de datos. Medidas defensivas, estándares de cifrado y procedimientos operativos para activos de inteligencia de usuarios."
+>
+  <fragment slot="header"><Nav /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <div class="fixed top-0 left-0 right-0 h-[2px] bg-primary/10 z-40 pointer-events-none scanline-anim" aria-hidden="true"></div>
+
+  <main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl pt-32 relative">
+    <div class="absolute inset-0 tactical-grid opacity-10 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Hero -->
+    <section class="mb-xl border-l-4 border-primary pl-lg relative scroll-reveal">
+      <div class="font-label-md text-label-md text-primary mb-xs tracking-[0.2em] uppercase font-bold">Nivel de Seguridad: Nivel 4</div>
+      <h1 class="font-headline-lg text-display-lg text-on-surface uppercase mb-sm leading-none neon-glow">Protocolo de Privacidad</h1>
+      <p class="max-w-2xl text-on-surface-variant font-body-md">
+        Marco táctico de gobernanza de datos. Este documento describe las medidas defensivas, estándares de cifrado y procedimientos operativos que rigen todos los activos de inteligencia y telemetría de usuarios dentro del perímetro RedBox.
+      </p>
+    </section>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-lg relative">
+
+      <!-- Módulo de Recopilación de Datos -->
+      <section class="md:col-span-8 protocol-card p-lg group scroll-reveal">
+        <div class="flex justify-between items-start mb-lg">
+          <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">dataset</span>
+            <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Recopilación de Datos</h2>
+          </div>
+          <span class="font-mono text-[12px] bg-surface-container-highest px-sm py-1 border border-outline-variant text-on-surface">ID: RX-SEC-001</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg text-on-surface-variant">
+          <div class="space-y-md">
+            <p class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-xs font-bold">Telemetría Activa</p>
+            <p class="font-body-md">Aislamos la telemetría operativa esencial, incluyendo registros de handshake de red, cabeceras de paquetes para análisis de amenazas y métricas de salud del sistema. No se recopila metadata no funcional.</p>
+          </div>
+          <div class="space-y-md">
+            <p class="font-label-md text-label-md text-primary uppercase border-b border-outline-variant pb-xs font-bold">Aserciones de Identidad</p>
+            <p class="font-body-md">La identidad del usuario está estrictamente aislada. La verificación se realiza mediante protocolos de autenticación endurecidos, minimizando la huella de PII (Información de Identificación Personal) en nuestros servidores.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Threat Status Side Panel -->
+      <aside class="md:col-span-4 protocol-card p-lg flex flex-col justify-between scroll-reveal">
+        <div>
+          <div class="flex items-center gap-sm mb-md">
+            <div class="w-3 h-3 bg-primary threat-pulse" aria-hidden="true"></div>
+            <h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface font-bold">System Status</h3>
+          </div>
+          <div class="space-y-sm">
+            {SYS_STATUS.map((s) => (
+              <div class="flex justify-between items-center bg-surface-container-low p-sm border border-outline-variant">
+                <span class="font-mono text-[12px]">{s.key}</span>
+                <span class={`font-mono text-[12px] ${s.tone === 'primary' ? 'text-primary' : 'text-secondary'}`}>{s.val}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="mt-lg pt-lg border-t border-outline-variant">
+          <p class="font-mono text-[12px] text-secondary italic">"Defense is not a state; it is a process."</p>
+        </div>
+      </aside>
+
+
+      <!-- Protocolos de Cifrado (AES-256) -->
+      <section class="md:col-span-4 protocol-card p-lg border-primary/30 scroll-reveal" aria-labelledby="aes-256-title">
+        <div class="mb-lg">
+          <span class="material-symbols-outlined text-primary text-4xl mb-sm" style="font-variation-settings: 'FILL' 0;">lock_open</span>
+          <h2 id="aes-256-title" class="font-headline-lg text-headline-lg uppercase text-on-surface mb-xs">AES-256</h2>
+          <p class="font-label-md text-label-md text-primary uppercase font-bold">Capa Endurecida</p>
+        </div>
+        <p class="font-body-md text-on-surface-variant mb-md">Todos los datos en reposo están protegidos por el Estándar de Cifrado Avanzado con claves de 256 bits. Las claves se rotan en un ciclo de 24 horas y se almacenan en HSM (Módulos de Seguridad de Hardware) físicos.</p>
+        <div class="bg-surface-container-lowest p-md font-mono text-[12px] text-primary/80 overflow-hidden whitespace-nowrap">
+          [SHA256: 4f1a2b...9z0p1q2r3s4t5u]
+        </div>
+      </section>
+
+      <!-- Uso de la Información -->
+      <section class="md:col-span-8 protocol-card p-lg scroll-reveal" aria-labelledby="use-info-title">
+        <div class="flex items-center gap-sm mb-lg">
+          <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+          <h2 id="use-info-title" class="font-headline-lg text-headline-lg uppercase text-on-surface">Uso de la Información</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+          {USE_CASES.map((c) => (
+            <div class="p-md bg-surface-container-low border border-outline-variant">
+              <div class="font-label-md text-label-md text-primary mb-xs font-bold">{c.num}</div>
+              <p class="font-mono text-[12px] text-secondary">{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Módulo de Derechos del Usuario -->
+      <section class="md:col-span-12 protocol-card overflow-hidden scroll-reveal" aria-labelledby="user-rights-title">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="p-lg md:p-xl flex flex-col justify-center">
+            <h2 id="user-rights-title" class="font-headline-lg text-[40px] leading-tight uppercase text-on-surface mb-md neon-glow">Derechos Tácticos del Usuario</h2>
+            <ul class="space-y-md">
+              {USER_RIGHTS.map((r) => (
+                <li class="flex gap-md">
+                  <span class="material-symbols-outlined text-primary">{r.icon}</span>
+                  <div>
+                    <p class="font-label-md text-label-md uppercase text-on-surface font-bold">{r.title}</p>
+                    <p class="font-body-md text-on-surface-variant">{r.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="relative bg-surface-container-highest flex items-center justify-center p-xl overflow-hidden min-h-[400px]">
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+              style="background-image: url('/image/futuristic_industrial_circuit_board_background_with_glowing_red_neon_traces.png')"
+              aria-hidden="true"
+            ></div>
+            
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CTA Inferior -->
+    <section class="mt-2xl text-center py-xl border-t border-outline-variant scroll-reveal">
+      <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-md neon-glow">Protocolo de Consulta</h3>
+      <p class="text-secondary font-body-md mb-lg max-w-3xl mx-auto">Dirija cualquier consulta sobre el Protocolo de Privacidad RedBox a nuestro Delegado de Protección de Datos (DPO) a través de canal cifrado.</p>
+      <div class="flex flex-wrap justify-center gap-md">
+        <a class="font-label-md text-label-md text-primary hover:underline underline-offset-4 font-bold no-underline" href="mailto:dpo@redbox.cyber">info@redboxcibersecurity.com</a>
+        <span class="text-outline-variant" aria-hidden="true">|</span>
+        <span class="font-label-md text-label-md text-secondary font-bold">PGP_SEGURO: 0x8F2E...44B1</span>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  @keyframes scanline-slide {
+    0% { top: 0; }
+    100% { top: 100vh; }
+  }
+  .scanline-anim {
+    animation: scanline-slide 8s linear infinite;
+  }
+</style>

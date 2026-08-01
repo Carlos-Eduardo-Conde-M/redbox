@@ -1,0 +1,389 @@
+/*
+  ===========================================================
+  KINETIC SHIELD — UTILITIES & SECTIONS
+  Catálogo de utilidades visuales reutilizables extraídas de
+  los mockups de Google Stitch (ver /mockups/*).
+  Todas son opt-in (no afectan a menos que se aplique la clase).
+  ===========================================================
+*/
+
+/* ----------------------------------------------------------
+   Tactical grid backgrounds
+   Cuadrícula roja sutil para superficies oscuras.
+   ---------------------------------------------------------- */
+.tactical-grid {
+  background-image:
+    linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.tactical-grid-fine {
+  background-image:
+    linear-gradient(rgba(255, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* ----------------------------------------------------------
+   Sharp border (corner brackets)
+   Marca esquina con brackets cuadrados (4 esquinas decoradas).
+   ---------------------------------------------------------- */
+.sharp-border {
+  position: relative;
+  border: 1px solid var(--color-outline-variant);
+}
+
+.sharp-border::before,
+.sharp-border::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-primary);
+  pointer-events: none;
+}
+
+.sharp-border::before {
+  top: -2px;
+  left: -2px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.sharp-border::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* ----------------------------------------------------------
+   Scanner line — barrido horizontal animado rojo.
+   ---------------------------------------------------------- */
+@keyframes scan {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary) 50%,
+    transparent
+  );
+  box-shadow: 0 0 12px var(--color-primary);
+  animation: scan 4s linear infinite;
+}
+
+/* ----------------------------------------------------------
+   Threat pulse — used for status indicators.
+   ---------------------------------------------------------- */
+@keyframes threat-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 0, 0, 0);
+  }
+}
+
+.threat-pulse {
+  animation: threat-pulse 2s ease-out infinite;
+}
+
+/* ----------------------------------------------------------
+   Neon glow rojo (texto y cajas de estado).
+   ---------------------------------------------------------- */
+.neon-glow {
+  text-shadow:
+    0 0 4px rgba(255, 0, 0, 0.6),
+    0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+.neon-glow-soft {
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+}
+
+.box-glow-primary {
+  box-shadow: 0 0 15px rgba(230, 0, 0, 0.15);
+}
+
+.box-glow-strong {
+  box-shadow: 0 0 20px rgba(230, 0, 0, 0.4);
+}
+
+/* ----------------------------------------------------------
+   Cyber card — contenedor principal de módulos.
+   superficies oscuras elevadas con borde rojo sutil y glow.
+   ---------------------------------------------------------- */
+.cyber-card-glow {
+  position: relative;
+  border: 1px solid var(--color-outline-variant);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 0, 0, 0.02),
+      transparent 30%
+    ),
+    var(--color-surface-container-low);
+  border-radius: 0;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cyber-card-glow:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.bento-card {
+  position: relative;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-container-low);
+  border-radius: 0;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-container);
+  box-shadow: inset 0 0 30px rgba(255, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Protocol card — versión usada en páginas legales/privacidad */
+.protocol-card {
+  position: relative;
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-low);
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------------
+   Glitch text — efecto de doble capa al hover (vía data-text).
+   Requiere atributo data-text="..." en el elemento.
+   ---------------------------------------------------------- */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glitch-text:hover::before {
+    color: var(--color-primary);
+    transform: translate(-2px, 0);
+    opacity: 0.7;
+    animation: glitch-1 0.3s steps(2) infinite;
+  }
+
+  .glitch-text:hover::after {
+    color: var(--color-tertiary);
+    transform: translate(2px, 0);
+    opacity: 0.7;
+    animation: glitch-2 0.4s steps(2) infinite;
+  }
+}
+
+@keyframes glitch-1 {
+  0% { clip-path: inset(20% 0 60% 0); }
+  100% { clip-path: inset(60% 0 20% 0); }
+}
+
+@keyframes glitch-2 {
+  0% { clip-path: inset(60% 0 20% 0); }
+  100% { clip-path: inset(20% 0 60% 0); }
+}
+
+/* ----------------------------------------------------------
+   Glitch text simple — versión del mockup servicios.
+   Aplicación directa sobre el elemento (sin data-text).
+   ---------------------------------------------------------- */
+.glitch-text-simple:hover {
+  animation: glitch-simple 0.2s infinite;
+}
+
+@keyframes glitch-simple {
+  0% { transform: translate(0); text-shadow: 2px 0 #ff0000; }
+  25% { transform: translate(-1px, 1px); text-shadow: -2px 0 #00dbe9; }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* ----------------------------------------------------------
+   Flicker animation — hero readouts (servicios).
+   ---------------------------------------------------------- */
+.flicker-anim {
+  animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.3; }
+}
+
+/* ----------------------------------------------------------
+   Image container — gradient overlay en imágenes (servicios).
+   ---------------------------------------------------------- */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(10, 11, 13, 0.9));
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   Pulse slow — pulso suave para badges y readouts.
+   Basado en animate-pulse pero más lento (4s vs 2s).
+   ---------------------------------------------------------- */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+  50% { opacity: 0.85; box-shadow: 0 0 0 8px rgba(255, 0, 0, 0); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ----------------------------------------------------------
+   Logo tactical (home hero) — breathing + glitch keyframes
+   Fiel al mockup redbox_home.
+   ---------------------------------------------------------- */
+@keyframes logo-breathing {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 26, 26, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 26, 26, 0.8));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes logo-glitch {
+  0% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  2% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-5px, 2px);
+  }
+  4% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(5px, -2px);
+  }
+  6% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  94% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+  96% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translate(8px, 4px);
+  }
+  98% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translate(-8px, -4px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translate(0);
+  }
+}
+
+.tactical-logo-anim {
+  animation:
+    logo-breathing 4s ease-in-out infinite,
+    logo-glitch 8s step-end infinite;
+}
+
+/* ----------------------------------------------------------
+   Scroll reveal — see /animations/scroll-reveal.ts.
+   Soporta dos APIs: .reveal + .is-visible (convención interna)
+   y .scroll-reveal + .visible (convención del mockup original).
+   ---------------------------------------------------------- */
+.reveal,
+.scroll-reveal {
+  will-change: opacity, transform;
+}
+
+/* ----------------------------------------------------------
+   Flicker border — empleo en botones flotantes de páginas legales.
+   ---------------------------------------------------------- */
+@keyframes border-flicker {
+  0%, 100% { border-color: var(--color-outline-variant); }
+  50% { border-color: var(--color-primary); }
+}
+
+.flicker-border {
+  animation: border-flicker 4s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------
+   Status dot — indicador circular de estado (ÚNICA excepción
+   a la regla border-radius: 0; ver DESIGN.md "Shapes").
+   ---------------------------------------------------------- */
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  box-shadow: 0 0 6px var(--color-primary);
+}
+
+.status-dot-tertiary {
+  background-color: var(--color-tertiary);
+  box-shadow: 0 0 6px var(--color-tertiary);
+}
+
+.status-dot-neutral {
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 6px var(--color-secondary);
+}

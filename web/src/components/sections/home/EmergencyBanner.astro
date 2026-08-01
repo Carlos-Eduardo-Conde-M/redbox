@@ -1,0 +1,44 @@
+---
+/**
+ * Home Emergency Banner — Sección 7.
+ * Banner rojo "Línea Roja: +34 900 RED BOX" con CTA EMERGENCIA.
+ */
+import { COMPANY } from '../../../constants/company';
+---
+
+<section
+  class="bg-primary py-12 px-margin-desktop relative overflow-hidden"
+  aria-labelledby="emergency-title"
+>
+  <div class="absolute inset-0 scanner-line opacity-20" aria-hidden="true"></div>
+
+  <div
+    class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-8 scroll-reveal"
+  >
+    <div class="border-l-4 border-white pl-6">
+      <h3 id="emergency-title" class="font-headline-sm text-white mb-2 uppercase tracking-tight">
+        ¿Sufre un incidente activo?
+      </h3>
+      <p class="font-mono text-xs text-white/90 uppercase tracking-widest">
+        [URGENT_DEPLOYMENT]: Despliegue inmediato de nuestro equipo de Respuesta a Incidentes.
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="text-right">
+        <div class="font-label-sm text-white/60 uppercase font-bold tracking-widest mb-1">
+          PROTOCOLO DE EMERGENCIA
+        </div>
+        <span class="font-headline-sm text-white font-black tracking-tighter">
+          CELULAR:     {COMPANY.phone}
+        </span>
+      </div>
+      <button
+        class="bg-white text-primary px-10 py-4 font-label-md font-black uppercase tracking-[0.3em] shadow-2xl hover:scale-105 transition-transform active:scale-95"
+        type="button"
+      >
+        CONTÁCTANOS
+      </button>
+    </div>
+  </div>
+</section>

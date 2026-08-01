@@ -1,0 +1,90 @@
+---
+const OPERATIONS = [
+  'Respuesta a Incidentes',
+  'Auditoría de Sistemas',
+  'Despliegue Defensivo',
+  'Consulta de Inteligencia',
+];
+---
+
+<section class="py-32 px-margin-mobile md:px-margin-desktop relative" aria-labelledby="qs-contact-title">
+  <div class="absolute inset-0 tactical-grid opacity-10 pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto relative z-10 bento-card p-12 md:p-16 border-2 border-primary/40 box-glow-strong scroll-reveal">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-12 h-12 bg-primary flex items-center justify-center box-glow-strong">
+        <span class="material-symbols-outlined text-white" aria-hidden="true">vpn_key</span>
+      </div>
+      <h2 id="qs-contact-title" class="font-headline-lg text-3xl md:text-4xl text-on-surface uppercase tracking-tight">
+        Contactate con <span class="text-primary">NOSOTROS</span>
+      </h2>
+    </div>
+
+    <form class="space-y-10" name="secure-contact" netlify-honeypot="bot-field" data-netlify="true">
+      <input type="hidden" name="form-name" value="secure-contact" />
+      <p class="hidden" aria-hidden="true">
+        <label>No llenar: <input name="bot-field" /></label>
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="space-y-3">
+          <label class="font-mono text-primary uppercase tracking-widest font-bold text-[12px]" for="operator-name">Nombre</label>
+          <input
+            id="operator-name"
+            name="name"
+            class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20 uppercase bg-transparent"
+            placeholder="OPERADOR_XYZ"
+            type="text"
+            required
+          />
+        </div>
+        <div class="space-y-3">
+          <label class="font-mono text-primary uppercase tracking-widest font-bold text-[12px]" for="operation-type">Naturaleza de Operación</label>
+          <select
+            id="operation-type"
+            name="operation_type"
+            class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all uppercase bg-transparent"
+            required
+          >
+            {OPERATIONS.map((op) => <option>{op}</option>)}
+          </select>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <label class="font-mono text-primary uppercase tracking-widest font-bold text-[12px]" for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20 bg-transparent"
+          placeholder="alias@redbox.security"
+          type="email"
+          required
+        />
+      </div>
+
+      <div class="space-y-3">
+        <label class="font-mono text-primary uppercase tracking-widest font-bold text-[12px]" for="message">Mensaje</label>
+        <textarea
+          id="message"
+          name="message"
+          class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20 h-32 bg-transparent"
+          placeholder="Describa los parámetros de la amenaza..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 pt-6">
+        <div class="flex items-center gap-3 text-on-surface/40">
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">lock</span>
+          <p class="font-mono uppercase tracking-widest text-[12px]">Cifrado de extremo a extremo activado</p>
+        </div>
+        <button
+          class="w-full md:w-auto bg-primary text-white px-16 py-6 font-headline-sm text-xl uppercase font-black tracking-[0.2em] hover:brightness-125 transition-all box-glow-strong active:scale-95"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

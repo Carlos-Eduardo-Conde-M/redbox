@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/comunidad/Hero.astro';
+import Mission from '../components/sections/comunidad/Mission.astro';
+import Pillars from '../components/sections/comunidad/Pillars.astro';
+import CTA from '../components/sections/comunidad/CTA.astro';
+---
+
+<Layout
+  title="Comunidad"
+  description="Comunidad RedBox — Un ecosistema exclusivo para profesionales de ciberseguridad ofensiva. Recursos, retos técnicos y networking profesional."
+>
+  <fragment slot="header"><Nav /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <Hero />
+  <Mission />
+  <Pillars />
+  <CTA />
+</Layout>

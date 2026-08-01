@@ -1,0 +1,58 @@
+---
+const MILESTONES = [
+  {
+    year: '2024',
+    icon: 'lan',
+    title: 'Fundación',
+    text: 'Fundada por un núcleo de especialistas en Red Teaming. Comenzamos interceptando ataques estatales contra redes energéticas.',
+    highlight: false,
+  },
+  {
+    year: '2025',
+    icon: 'memory',
+    title: 'Escalación',
+    text: 'Desarrollo del motor "Kinetic Shield", la primera IA capaz de anticipar vectores de ataque en infraestructuras industriales de alta densidad.',
+    highlight: true,
+  },
+  {
+    year: '2026',
+    icon: 'verified_user',
+    title: 'Liderazgo',
+    text: 'Convertidos en el estándar de REDBOX para defensa táctica global. 100% de éxito en contención de brechas críticas.',
+    highlight: false,
+  },
+];
+---
+
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative overflow-hidden" aria-labelledby="qs-history-title">
+  <div class="max-w-[1400px] mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-primary/20 pb-8 scroll-reveal">
+      <div>
+        <p class="font-mono text-primary uppercase tracking-[.4em] mb-4 text-[12px]">CRONOLOGÍA_SITREP</p>
+        <h2 id="qs-history-title" class="font-headline-lg text-display-lg text-on-surface uppercase mb-4">
+          Nuestra <span class="text-primary italic">HISTORIA</span>
+        </h2>
+        <p class="font-body-md text-on-surface/60 max-w-2xl">
+          Nuestra arquitectura nació en el corazón de las operaciones ofensivas más complejas del mundo,
+          evolucionando hacia el estándar de defensa definitiva.
+        </p>
+      </div>
+      <span class="font-mono text-primary tracking-widest font-bold bg-primary/10 px-4 py-2 mb-4 border border-primary/30 text-[12px]">
+        [ ARCHIVO_SITREP_001 ]
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
+      {MILESTONES.map((m) => (
+        <div class:list={['bento-card p-10 sharp-border group', m.highlight && 'border-primary/40 bg-primary/5']}>
+          <div class="flex justify-between items-start mb-8">
+            <div class="font-headline-lg text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">{m.year}</div>
+            <span class="material-symbols-outlined text-primary opacity-50" aria-hidden="true">{m.icon}</span>
+          </div>
+          <h3 class="font-headline-lg text-on-surface uppercase mb-4 tracking-tighter">{m.title}</h3>
+          <p class="font-body-md text-on-surface/70 leading-relaxed">{m.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

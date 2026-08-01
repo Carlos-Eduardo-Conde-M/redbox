@@ -1,0 +1,45 @@
+---
+/**
+ * Home Capabilities / Qué Hacemos — Sección 3.
+ * 3 bento cards: Replicación APT, Metodología TTP, Ingeniería Inversa.
+ */
+const CAPABILITIES = [
+  { icon: 'psychology', title: 'Replicación de APT', text: 'Simulamos grupos de Amenaza Persistente Avanzada (APT) para probar tus protocolos de detección y respuesta bajo presión extrema.' },
+  { icon: 'account_tree', title: 'Metodología TTP', text: 'Analizamos Tácticas, Técnicas y Procedimientos actuales utilizados por adversarios reales para identificar brechas en tu arquitectura.' },
+  { icon: 'biotech', title: 'Ingeniería Inversa', text: 'Desglosamos malware y exploits personalizados para entender cómo operan dentro de infraestructuras específicas.' },
+];
+---
+
+<section
+  class="py-24 bg-surface-container-low px-margin-desktop relative overflow-hidden"
+  aria-labelledby="capabilities-title"
+>
+  <div class="absolute inset-0 tactical-grid-fine opacity-10" aria-hidden="true"></div>
+
+  <div class="max-w-container-max mx-auto scroll-reveal">
+    <div class="text-center mb-16">
+      <h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">
+        Qué Hacemos
+      </h2>
+      <h3
+        id="capabilities-title"
+        class="font-headline-md text-headline-md text-on-background max-w-3xl mx-auto uppercase"
+      >
+        Evaluamos la resistencia de tu organización frente a amenazas reales
+      </h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {CAPABILITIES.map((cap) => (
+        <div class="bento-card p-8 group relative overflow-hidden">
+          <div class="scanner-line"></div>
+          <div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 border border-primary/30 text-primary">
+            <span class="material-symbols-outlined">{cap.icon}</span>
+          </div>
+          <h4 class="font-headline-sm mb-4 uppercase text-primary">{cap.title}</h4>
+          <p class="text-on-surface-variant font-body-md">{cap.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

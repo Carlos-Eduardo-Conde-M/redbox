@@ -1,0 +1,18 @@
+---
+interface Props {
+  class?: string;
+  children?: any;
+  glow?: boolean;
+}
+const { class: className, glow = false } = Astro.props;
+---
+
+<div
+  class={[
+    'cyber-card-glow',
+    glow ? 'box-glow-strong' : 'box-glow-primary',
+    className,
+  ].filter(Boolean).join(' ')}
+>
+  <slot />
+</div>

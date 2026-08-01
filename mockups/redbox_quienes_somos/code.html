@@ -1,0 +1,482 @@
+<!DOCTYPE html><html class="dark" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>REDBOX | Quiénes Somos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e2e2e5",
+                    "on-tertiary-fixed": "#002022",
+                    "surface-variant": "#1A1C1E",
+                    "on-primary": "#FFFFFF",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#ff0000",
+                    "outline": "#b18780",
+                    "surface-dim": "#0C0E10",
+                    "surface-tint": "#ff0000",
+                    "surface-container-high": "#282a2c",
+                    "on-secondary-fixed": "#1a1c20",
+                    "on-primary-container": "#FFFFFF",
+                    "surface-container-low": "#121416",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "inverse-on-surface": "#2f3133",
+                    "on-secondary-fixed-variant": "#45474b",
+                    "on-primary-fixed": "#410000",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "on-primary-fixed-variant": "#930100",
+                    "primary-container": "#ff0000",
+                    "background": "#0C0E10",
+                    "on-error": "#690005",
+                    "secondary": "#c6c6cc",
+                    "on-secondary": "#2f3035",
+                    "on-tertiary": "#00363a",
+                    "inverse-surface": "#e2e2e5",
+                    "tertiary-fixed": "#7df4ff",
+                    "secondary-fixed": "#e2e2e8",
+                    "on-tertiary-container": "#002f33",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#37393b",
+                    "on-secondary-container": "#b7b8be",
+                    "error": "#ffb4ab",
+                    "surface": "#121416",
+                    "on-surface-variant": "#ebbbb4",
+                    "primary-fixed": "#ffdad4",
+                    "on-surface": "#e2e2e5",
+                    "surface-container-lowest": "#060708",
+                    "secondary-container": "#47494e",
+                    "surface-container-highest": "#333537",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "tertiary-container": "#00a0aa",
+                    "secondary-fixed-dim": "#c6c6cc",
+                    "tertiary": "#00dbe9",
+                    "surface-container": "#1A1C1E",
+                    "primary": "#ff0000",
+                    "outline-variant": "#25272A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "gutter": "16px",
+                    "margin-desktop": "32px",
+                    "xl": "40px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "code-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-md": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "code-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glow-red {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .glow-red-sm {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .bento-card {
+            background: rgba(18, 20, 22, 0.6);
+            border: 1px solid #25272A;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            border-color: #ff0000;
+            background: rgba(255, 0, 0, 0.05);
+            box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.1);
+        }
+
+        .tech-border {
+            position: relative;
+        }
+        .tech-border::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 12px; height: 12px;
+            border-top: 2px solid #ff0000;
+            border-right: 2px solid #ff0000;
+        }
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 12px; height: 12px;
+            border-bottom: 2px solid #ff0000;
+            border-left: 2px solid #ff0000;
+        }
+
+        .tactical-grid {
+            background-image: 
+                linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.05) 50%, rgba(255, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100%; }
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 9999;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-primary/30">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-[1400px] mx-auto">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto filter brightness-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q">
+<span class="font-display-lg text-2xl font-black tracking-tighter text-primary">REDBOX</span>
+</div>
+<nav class="hidden md:flex gap-10">
+<a class="text-on-surface/70 hover:text-primary transition-all font-label-md uppercase tracking-wider" href="#">Inicio</a>
+<a class="text-on-surface/70 hover:text-primary transition-all font-label-md uppercase tracking-wider" href="#">Servicios</a>
+<a class="text-on-surface/70 hover:text-primary transition-all font-label-md uppercase tracking-wider" href="#">Capacitaciones</a>
+<a class="text-primary font-label-md uppercase tracking-wider border-b-2 border-primary pb-1" href="#">Quiénes Somos</a>
+<a class="text-on-surface/70 hover:text-primary transition-all font-label-md uppercase tracking-wider" href="#">Blog</a>
+</nav>
+<button class="bg-primary text-on-primary px-8 py-3 font-label-md font-black uppercase tracking-widest hover:brightness-125 transition-all glow-red">
+            Contáctenos
+        </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[85vh] flex items-center overflow-hidden border-b border-primary/20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-background/60 z-10"></div>
+<img class="w-full h-full object-cover grayscale brightness-50" src="https://lh3.googleusercontent.com/aida/AP1WRLtKlHlR2Fx-eRCBGUkACVb5cIfi-V3GeILD0dGwqgK5vST8wZzqlAl2536rzfWS_51hAkqaAMI4uNM1KjTCIfCQZsrwk_on_4CSX7t5AEm6VMrn7kiUkuYZOwSaGGlHyn96Bie5GdIcKJYLL31XwOoHwHrJ23uQ4QwGdAUj8cPSoZshGW9KgHHlTuMSyrgVfhdH_y-U79bf7tHVaZLZLXrh2tFXpWv-9XNkDdpoFVH5nh5PzuC3JXl1FrpQ">
+<div class="absolute inset-0 tactical-grid z-20"></div>
+<div class="scanline"></div>
+</div>
+<div class="relative z-30 px-margin-desktop w-full max-w-[1400px] mx-auto">
+<div class="max-w-4xl space-y-8">
+<div class="flex items-center gap-4">
+<span class="w-16 h-[3px] bg-primary glow-red-sm"></span>
+<span class="font-code-sm text-primary uppercase tracking-[0.3em] font-bold">Estado: Operativo // Misión Activa</span>
+</div>
+<h1 class="font-display-lg text-on-surface uppercase leading-none tracking-tight">
+                    Misión <span class="text-primary drop-shadow-[0_0_15px_rgba(255,0,0,0.4)]">Operativa</span>
+</h1>
+<div class="border-l-[6px] border-primary pl-8 py-4 bg-primary/5 backdrop-blur-sm">
+<p class="font-headline-lg-mobile md:text-2xl text-on-surface leading-relaxed max-w-2xl">
+                        Neutralizamos las amenazas más avanzadas del espectro digital. Protegemos infraestructuras críticas con precisión táctica y defensa absoluta. No solo monitoreamos; dominamos el entorno.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-6 pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 font-display-lg-mobile text-lg uppercase font-black tracking-widest hover:brightness-125 transition-all glow-red">
+                        Desplegar Protocolo
+                    </button>
+<button class="border-2 border-primary/50 text-primary px-10 py-5 font-display-lg-mobile text-lg uppercase font-black tracking-widest hover:bg-primary/10 transition-all">
+                        Ver Activos
+                    </button>
+</div>
+</div>
+</div>
+<!-- Coordinates Deco -->
+<div class="absolute right-margin-desktop bottom-20 z-30 hidden lg:block text-right font-code-sm">
+<div class="space-y-1">
+<p class="text-primary uppercase tracking-widest opacity-70">Ubicación Actual</p>
+<p class="text-on-surface text-lg font-bold">CENTRO DE OPERACIONES TÁCTICAS (TOC)</p>
+<p class="text-primary font-bold">LAT: 19.4326 | LONG: -99.1332</p>
+<div class="h-[2px] w-full bg-primary/30 mt-2"></div>
+</div>
+</div>
+</section>
+<!-- History Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-[1400px] mx-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-primary/20 pb-8">
+<div>
+<p class="font-code-sm text-primary uppercase tracking-[.4em] mb-4">CRONOLOGÍA_SITREP</p>
+<h2 class="font-display-lg text-on-surface uppercase mb-4 transition-all duration-700 ease-out opacity-100 translate-y-0">Historial de <span class="text-primary italic">Despliegue</span></h2>
+<p class="font-body-md text-on-surface/60 max-w-xl">Nuestra arquitectura nació en el corazón de las operaciones ofensivas más complejas del mundo, evolucionando hacia el estándar de defensa definitiva.</p>
+</div>
+<span class="font-code-sm text-primary tracking-widest font-bold bg-primary/10 px-4 py-2 mb-4 border border-primary/30">[ ARCHIVO_SITREP_001 ]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- 2018 -->
+<div class="bento-card p-10 tech-border group transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-8">
+<div class="font-display-lg text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">2018</div>
+<span class="material-symbols-outlined text-primary opacity-50">lan</span>
+</div>
+<h3 class="font-headline-lg text-on-surface uppercase mb-4 tracking-tighter">Génesis</h3>
+<p class="font-body-md text-on-surface/70 leading-relaxed">Fundada por un núcleo de especialistas en Red Teaming. Comenzamos interceptando ataques estatales contra redes energéticas.</p>
+</div>
+<!-- 2021 -->
+<div class="bento-card p-10 tech-border group border-primary/40 bg-primary/5 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-8">
+<div class="font-display-lg text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">2021</div>
+<span class="material-symbols-outlined text-primary opacity-50">memory</span>
+</div>
+<h3 class="font-headline-lg text-on-surface uppercase mb-4 tracking-tighter">Escalación</h3>
+<p class="font-body-md text-on-surface/70 leading-relaxed">Desarrollo del motor "Kinetic Shield", la primera IA capaz de anticipar vectores de ataque en infraestructuras industriales de alta densidad.</p>
+</div>
+<!-- 2024 -->
+<div class="bento-card p-10 tech-border group transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-8">
+<div class="font-display-lg text-5xl text-primary/20 group-hover:text-primary/40 transition-colors">2024</div>
+<span class="material-symbols-outlined text-primary opacity-50">verified_user</span>
+</div>
+<h3 class="font-headline-lg text-on-surface uppercase mb-4 tracking-tighter">Liderazgo</h3>
+<p class="font-body-md text-on-surface/70 leading-relaxed">Convertidos en el estándar de REDBOX para defensa táctica global. 100% de éxito en contención de brechas críticas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Protocols Section -->
+<section class="py-24 px-margin-desktop bg-background">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative group transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full opacity-50"></div>
+<div class="relative z-10 p-1 bg-primary/30">
+<img class="w-full h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf6gl4mIYYfZY26xpjjZanu5a9FdhBGpGkWNrvOPEmTkdDMlKKdW_xcVuzb_qcRiTJpq8qzSbP8mQsIyIW2MCAv9eQMxYA0stEgmBxMZsHEGDD7Cjlo8sdhvxiYVGJJAhpLG6m-h671jy7ZUTtAS-wSWe3vT4yduhkD1tQ8RpnMvU_EF6Rd05TcAv9ISCJJJVXFuL20b8wXQ3oshI79c7vZpgeaPyVsWdUoFwEdtl7BTlMKEE3a1X1vw">
+<div class="absolute inset-0 tactical-grid opacity-30 pointer-events-none"></div>
+</div>
+<div class="absolute -bottom-8 -right-8 z-20 bg-background p-8 border-2 border-primary glow-red-sm max-w-xs">
+<p class="font-code-sm text-primary uppercase mb-2 tracking-widest font-bold">Métrica de Integridad</p>
+<p class="font-display-lg text-3xl text-on-surface">99.999% <span class="text-primary">DEFENSE</span></p>
+</div>
+</div>
+<div class="space-y-12 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="space-y-4">
+<p class="font-code-sm text-primary uppercase tracking-[.4em] font-bold">OPERATIONAL_VALUES</p>
+<h2 class="font-display-lg text-on-surface uppercase leading-none transition-all duration-700 ease-out opacity-100 translate-y-0">Protocolos <br><span class="text-primary italic">Núcleo</span></h2>
+</div>
+<div class="space-y-10">
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-lg-mobile text-2xl text-on-surface uppercase tracking-tight">Integridad Radical</h4>
+<p class="text-on-surface/60 leading-relaxed">Sin concesiones. Cada bit de datos está blindado bajo protocolos de encriptación cuántica y validación continua.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">target</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-lg-mobile text-2xl text-on-surface uppercase tracking-tight">Precisión Quirúrgica</h4>
+<p class="text-on-surface/60 leading-relaxed">Eliminamos el ruido. Nuestras alertas son accionables, directas y basadas en inteligencia de campo real.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<div class="flex-shrink-0 w-16 h-16 bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline-lg-mobile text-2xl text-on-surface uppercase tracking-tight">Defensa Absoluta</h4>
+<p class="text-on-surface/60 leading-relaxed">No aceptamos el compromiso del sistema. Si hay una amenaza, la erradicamos antes de que se manifieste.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Grid Section -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest border-y border-primary/20">
+<div class="max-w-[1400px] mx-auto text-center">
+<p class="font-code-sm text-primary uppercase tracking-[.4em] mb-4">CANALES_INTELIGENCIA</p>
+<h2 class="font-display-lg text-on-surface uppercase mb-8 transition-all duration-700 ease-out opacity-100 translate-y-0">REDES SOCIALES DE <span class="text-primary italic">OPERACIONES</span></h2>
+<p class="font-body-md text-on-surface/60 max-w-2xl mx-auto mb-16 italic">Siga nuestros canales de inteligencia para actualizaciones en tiempo real sobre el panorama de amenazas.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"><a class="group bento-card p-10 tech-border flex flex-col items-center gap-6 hover:translate-y-[-8px]" href="#"><div class="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all"><span class="material-symbols-outlined text-4xl">hub</span></div><div><p class="font-code-sm text-primary uppercase tracking-widest mb-1 font-bold">NETWORK UPDATES</p><h4 class="font-headline-lg-mobile text-xl text-on-surface uppercase">LinkedIn</h4></div></a><a class="group bento-card p-10 tech-border flex flex-col items-center gap-6 hover:translate-y-[-8px]" href="#"><div class="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all"><span class="material-symbols-outlined text-4xl">music_note</span></div><div><p class="font-code-sm text-primary uppercase tracking-widest mb-1 font-bold">VIRAL INTEL</p><h4 class="font-headline-lg-mobile text-xl text-on-surface uppercase">TikTok</h4></div></a><a class="group bento-card p-10 tech-border flex flex-col items-center gap-6 hover:translate-y-[-8px]" href="#"><div class="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all"><span class="material-symbols-outlined text-4xl">public</span></div><div><p class="font-code-sm text-primary uppercase tracking-widest mb-1 font-bold">COMMUNITY HUB</p><h4 class="font-headline-lg-mobile text-xl text-on-surface uppercase">Facebook</h4></div></a><a class="group bento-card p-10 tech-border flex flex-col items-center gap-6 hover:translate-y-[-8px]" href="#"><div class="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all"><span class="material-symbols-outlined text-4xl">play_circle</span></div><div><p class="font-code-sm text-primary uppercase tracking-widest mb-1 font-bold">VIDEO DEBRIEF</p><h4 class="font-headline-lg-mobile text-xl text-on-surface uppercase">YouTube</h4></div></a></div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-32 px-margin-desktop relative">
+<div class="absolute inset-0 tactical-grid opacity-10 pointer-events-none"></div>
+<div class="max-w-4xl mx-auto relative z-10 bento-card p-12 md:p-16 border-2 border-primary/40 glow-red-sm transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex items-center gap-4 mb-12">
+<div class="w-12 h-12 bg-primary flex items-center justify-center glow-red">
+<span class="material-symbols-outlined text-on-primary">vpn_key</span>
+</div>
+<h2 class="font-display-lg text-3xl md:text-4xl text-on-surface uppercase tracking-tight transition-all duration-700 ease-out opacity-100 translate-y-0">Solicitar Enlace Seguro</h2>
+</div>
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-3 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<label class="font-code-sm text-primary uppercase tracking-widest font-bold">Identificador (Nombre)</label>
+<input class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20 uppercase" placeholder="OPERADOR_XYZ" type="text">
+</div>
+<div class="space-y-3 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<label class="font-code-sm text-primary uppercase tracking-widest font-bold">Naturaleza de Operación</label>
+<select class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all uppercase">
+<option>Respuesta a Incidentes</option>
+<option>Auditoría de Sistemas</option>
+<option>Despliegue Defensivo</option>
+<option>Consulta de Inteligencia</option>
+</select>
+</div>
+</div>
+<div class="space-y-3">
+<label class="font-code-sm text-primary uppercase tracking-widest font-bold">Canal Seguro (Email)</label>
+<input class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20" placeholder="alias@redbox.security" type="email">
+</div>
+<div class="space-y-3">
+<label class="font-code-sm text-primary uppercase tracking-widest font-bold">Transmisión de Mensaje</label>
+<textarea class="w-full bg-surface-container border-b-2 border-primary/30 focus:border-primary focus:ring-0 text-on-surface py-4 px-0 transition-all placeholder:text-on-surface/20 h-32" placeholder="Describa los parámetros de la amenaza..."></textarea>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 pt-6">
+<div class="flex items-center gap-3 text-on-surface/40">
+<span class="material-symbols-outlined text-sm">lock</span>
+<p class="font-code-sm uppercase tracking-widest">Cifrado de extremo a extremo activado</p>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-16 py-6 font-display-lg-mobile text-xl uppercase font-black tracking-[0.2em] hover:brightness-125 transition-all glow-red active:scale-95" type="submit">
+                        Iniciar Conexión
+                    </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<footer class="bg-surface-dim border-t-2 border-primary/30 pt-24 pb-12 relative overflow-hidden">
+<div class="absolute inset-0 tactical-grid opacity-5 pointer-events-none"></div>
+<div class="max-w-[1400px] mx-auto px-margin-desktop relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+<!-- Brand Info -->
+<div class="space-y-8 transition-all duration-700 ease-out opacity-100 translate-y-0">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto filter brightness-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q">
+<span class="font-display-lg text-2xl font-black tracking-tighter text-primary">REDBOX</span>
+</div>
+<p class="text-on-surface/60 font-body-md leading-relaxed">
+                    Defensa ofensiva y formación de élite. Neutralizamos adversarios antes de que comprometan su activo más valioso.
+                </p>
+<div class="flex gap-4"><a class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">hub</span></a><a class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">music_note</span></a><a class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a><a class="w-12 h-12 flex items-center justify-center bg-surface-container border border-primary/20 text-on-surface hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-[20px]">play_circle</span></a></div>
+</div>
+<!-- Servicios -->
+<div class="transition-all duration-700 ease-out opacity-100 translate-y-0">
+<h4 class="font-label-md text-primary uppercase tracking-[0.3em] mb-10 font-black flex items-center gap-2">
+<span class="w-4 h-[2px] bg-primary"></span> SERVICIOS
+                </h4>
+<ul class="space-y-5">
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Pentesting</a></li>
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Red Team</a></li>
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Cloud Security</a></li>
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Wireless Audit</a></li>
+</ul>
+</div>
+<!-- Recursos -->
+<div class="transition-all duration-700 ease-out opacity-100 translate-y-0">
+<h4 class="font-label-md text-primary uppercase tracking-[0.3em] mb-10 font-black flex items-center gap-2">
+<span class="w-4 h-[2px] bg-primary"></span> RECURSOS
+                </h4>
+<ul class="space-y-5">
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Comunidad</a></li>
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Blog</a></li>
+<li class=""><a class="text-on-surface/60 hover:text-primary transition-colors font-label-md uppercase tracking-widest" href="#">Certificaciones</a></li>
+</ul>
+</div>
+<!-- Contacto -->
+<div class="transition-all duration-700 ease-out opacity-100 translate-y-0">
+<h4 class="font-label-md text-primary uppercase tracking-[0.3em] mb-10 font-black flex items-center gap-2">
+<span class="w-4 h-[2px] bg-primary"></span> CONTACTO
+                </h4>
+<ul class="space-y-8">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="text-on-surface/60 font-code-sm uppercase">info@redbox.security</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="text-on-surface/60 font-code-sm uppercase">+34 900 RED BOX</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-on-surface/60 font-code-sm uppercase">Madrid, España <br>TOC Nivel 4</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-primary/10 pt-12 flex flex-col lg:flex-row justify-between items-center gap-8">
+<div class="text-on-surface/40 font-code-sm uppercase tracking-[0.2em] text-center lg:text-left">
+                © 2024 REDBOX CYBERSECURITY. PROTOCOLO DE DEFENSA ACTIVO.
+            </div>
+<nav class="flex flex-wrap justify-center gap-10">
+<a class="font-code-sm text-on-surface/50 hover:text-primary transition-all uppercase tracking-widest" href="#">Privacy Protocol</a>
+<a class="font-code-sm text-on-surface/50 hover:text-primary transition-all uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="font-code-sm text-on-surface/50 hover:text-primary transition-all uppercase tracking-widest" href="#">Legal Notice</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+    // Reveal animations on scroll
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.bento-card, section h2, .grid > div').forEach(el => {
+        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+        observer.observe(el);
+    });
+</script>
+
+
+</body></html>

@@ -1,0 +1,34 @@
+---
+interface Props {
+  name: string;
+  size?: number;
+  fill?: 0 | 1;
+  weight?: number;
+  grade?: number;
+  opsz?: number;
+  class?: string;
+  "aria-hidden"?: boolean;
+}
+
+const {
+  name,
+  size = 20,
+  fill = 0,
+  weight = 400,
+  grade = 0,
+  opsz = 24,
+  class: className,
+  'aria-hidden': ariaHidden = true,
+} = Astro.props;
+---
+
+<span
+  class={['material-symbols-outlined inline-flex items-center justify-center', className].filter(Boolean).join(' ')}
+  aria-hidden={ariaHidden}
+  style={{
+    fontVariationSettings: `'FILL' ${fill}, 'wght' ${weight}, 'GRAD' ${grade}, 'opsz' ${opsz}`,
+    fontSize: `${size}px`,
+  }}
+>
+  {name}
+</span>

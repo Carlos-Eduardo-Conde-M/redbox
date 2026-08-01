@@ -1,0 +1,48 @@
+---
+const PILLARS = [
+  { id: '01', label: 'CERTIFICACIONES', title: 'Cursos Propios de Certificación (RedBox Cybersecurity)', text: 'Acreditaciones de alta exigencia nacidas en el campo de batalla, diseñadas para validar habilidades tácticas reales en entornos de infraestructura crítica.', img: '/image/academia-CRTA.png', alt: 'Shield Defense', variant: 'default' },
+  { id: '02', label: 'PARTNERSHIP OFICIAL', title: 'Cursos de Certificación Oficiales (Cyberwarfare Labs)', text: 'Acceso directo a la formación técnica más respetada del mundo a través de nuestra alianza estratégica con Cyberwarfare Labs.', img: '/image/academia-CWL.png', alt: 'CWL Logo', variant: 'default' },
+  { id: '03', label: 'MÓDULOS TÉCNICOS', title: 'Cursos Técnicos Especializados', text: 'Entrenamientos prácticos orientados al dominio del código y herramientas específicas, optimizando la eficiencia operativa del analista.', img: '/image/logo-redbox.png', alt: 'Terminal Code', variant: 'default' },
+];
+---
+
+<div class="py-10 px-40 bg-surface-container-lowest relative overflow-hidden" aria-labelledby="academia-pillars-title">
+  <div class="mb-16 scroll-reveal">
+    <h2 id="academia-pillars-title" class="font-display-lg text-headline-lg text-white uppercase tracking-tighter mb-4">
+      ENTRENAMIENTO <span class="text-primary">TÁCTICO</span>
+    </h2>
+    <div class="h-1 w-24 bg-primary"></div>
+  </div>
+
+  <div class="mb-16 scroll-reveal">
+    <div class="grid md:grid-cols-3 gap-8">
+      {PILLARS.map((pillar) => (
+        <div class={`sharp-border ${pillar.variant === 'highlighted' ? 'bg-primary/5 border-primary/40' : 'bg-surface-container/30'} p-6 flex flex-col group cyber-card-glow${pillar.variant === 'highlighted' ? ' relative' : ''}`}>
+          <div class="scanner-line opacity-20"></div>
+          {pillar.variant === 'highlighted' && (
+            <div class="absolute -top-3 -right-3 z-10">
+              <span class="bg-primary text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest shadow-lg">GLOBAL PARTNER</span>
+            </div>
+          )}
+          <div class={`mb-6 aspect-video overflow-hidden border ${pillar.variant === 'highlighted' ? 'border-primary/30 bg-black/40 flex items-center justify-center p-4' : 'border-primary/10'}`}>
+            <img
+              alt={pillar.alt}
+              class={`${pillar.variant === 'highlighted' ? 'max-h-full w-auto' : 'w-full h-full object-cover'} grayscale group-hover:grayscale-0 transition-all duration-500`}
+              src={pillar.img}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-code-sm text-[10px] text-primary uppercase tracking-widest">{pillar.id}. {pillar.label}</span>
+            {pillar.variant === 'highlighted' && (
+              <span class="material-symbols-outlined text-primary text-sm animate-pulse">verified</span>
+            )}
+          </div>
+          <h4 class="font-label-md text-white text-sm font-bold uppercase tracking-widest mb-3">{pillar.title}</h4>
+          <p class="text-on-surface-variant text-xs leading-relaxed uppercase tracking-tight">{pillar.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

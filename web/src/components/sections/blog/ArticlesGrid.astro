@@ -1,0 +1,70 @@
+---
+const ARTICLES = [
+  {
+    id: 'scada-0day',
+    tag: 'RESEARCH',
+    title: '0-Day Disclosure: Vulnerabilidades en Protocolos SCADA',
+    excerpt:
+      'Exploramos el fallo de desbordamiento de búfer en la pila TCP/IP que permite la ejecución remota de código en controladores.',
+    img: 'futuristic_industrial_circuit_board_background_with_glowing_red_neon_traces.png',
+    alt: 'Placa de circuito industrial con trazos rojos neon — fondo SCADA',
+    read: '12 MIN READ',
+  },
+  {
+    id: 'edr-evasion',
+    tag: 'EXPLOIT',
+    title: 'Guía Táctica: Evasión de EDR mediante Inyección',
+    excerpt:
+      'Metodología paso a paso para la inyección reflectante de DLLs y técnicas de bypass de hooks en Windows 11.',
+    img: 'a_futuristic_cybersecurity_terminal_interface_dark_room_red_glowing_matrix_code.png',
+    alt: 'Terminal de ciberseguridad con código matrix rojo — sala oscura',
+    read: '18 MIN READ',
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal">
+  {ARTICLES.map((article) => (
+    <article class="sharp-border bg-surface-container-lowest group flex flex-col hover:border-primary/50 transition-colors">
+      <div class="relative h-48 overflow-hidden">
+        <img
+          alt={article.alt}
+          class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+          src={`/image/${article.img}`}
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+        <div class="absolute bottom-4 left-4">
+          <span class="bg-surface-container-lowest/90 border border-outline-variant/30 text-on-surface px-2 py-1 font-mono text-[10px] uppercase tracking-widest">[{article.tag}]</span>
+        </div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col gap-3">
+        <h3 class="font-label-md text-label-md font-bold uppercase leading-tight group-hover:text-primary transition-colors text-white">
+          {article.title}
+        </h3>
+        <p class="text-on-surface-variant text-sm line-clamp-3">{article.excerpt}</p>
+        <div class="mt-auto pt-6 flex justify-between items-center border-t border-outline-variant/10">
+          <span class="font-mono text-[10px] text-on-surface-variant flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">schedule</span>
+            {article.read}
+          </span>
+          <button class="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-1" type="button">
+            LEER
+            <span class="material-symbols-outlined text-[18px]">arrow_right_alt</span>
+          </button>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
+
+<!-- Pagination -->
+<nav class="flex justify-center gap-4 pt-8 scroll-reveal" aria-label="Paginación del blog">
+  <button class="w-12 h-12 flex items-center justify-center sharp-border bg-primary text-white" type="button" aria-current="page">1</button>
+  <button class="w-12 h-12 flex items-center justify-center sharp-border bg-surface-container-lowest hover:bg-primary/10 transition-colors" type="button">2</button>
+  <button class="w-12 h-12 flex items-center justify-center sharp-border bg-surface-container-lowest hover:bg-primary/10 transition-colors" type="button">3</button>
+  <button class="w-12 h-12 flex items-center justify-center sharp-border bg-surface-container-lowest hover:bg-primary/10 transition-colors" type="button" aria-label="Siguiente página">
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+</nav>

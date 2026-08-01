@@ -1,0 +1,46 @@
+---
+/**
+ * Home Services / Capacidades Ofensivas — Sección 4.
+ * 4 cards [PROTOCOL: RT_01, WP_02, WA_03, CS_04] + circuit banner.
+ */
+const SERVICES = [
+  { code: 'RT_01', title: 'Red Team Exercises', text: 'Operaciones encubiertas de largo alcance para probar la resiliencia organizacional completa.' },
+  { code: 'WP_02', title: 'Web Pentesting', text: 'Auditorías profundas de aplicaciones web buscando vulnerabilidades lógicas y críticas.' },
+  { code: 'WA_03', title: 'Wireless Audit', text: 'Evaluación de perímetros inalámbricos y protocolos de comunicación por radiofrecuencia.' },
+  { code: 'CS_04', title: 'Cloud Security', text: 'Ataques simulados a entornos AWS/Azure/GCP para verificar configuraciones y permisos.' },
+];
+---
+
+<section
+  class="py-24 bg-surface px-margin-desktop relative"
+  id="servicios"
+  aria-labelledby="services-title"
+>
+  <div class="absolute inset-0 tactical-grid opacity-10" aria-hidden="true"></div>
+
+  <div class="max-w-container-max mx-auto scroll-reveal">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+      <div class="max-w-2xl border-l-4 border-primary pl-6">
+        <h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">
+          Capacidades Ofensivas
+        </h2>
+        <h3
+          id="services-title"
+          class="font-headline-md text-headline-md text-on-background uppercase"
+        >
+          Soluciones de seguridad diseñadas a la medida de tu infraestructura
+        </h3>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {SERVICES.map((svc) => (
+        <div class="bento-card p-6 sharp-border hover:bg-surface-container-high group">
+          <div class="font-mono text-[9px] text-primary/60 mb-2">[PROTOCOL: {svc.code}]</div>
+          <h4 class="font-label-md text-primary mb-3 uppercase tracking-tighter">{svc.title}</h4>
+          <p class="text-on-surface-variant text-sm font-body-md">{svc.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

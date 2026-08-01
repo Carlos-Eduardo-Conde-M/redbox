@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>REDBOX | Terms of Service - Tactical Operations Manual</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Tactical Manual Elements */
+        .manual-border {
+            border-left: 4px solid #ff0000;
+        }
+
+        .glitch-subtle {
+            animation: glitch 5s infinite;
+        }
+
+        @keyframes glitch {
+            0% { opacity: 1; }
+            95% { opacity: 1; transform: translateX(0); }
+            96% { opacity: 0.8; transform: translateX(2px); }
+            97% { opacity: 1; transform: translateX(-1px); }
+            100% { opacity: 1; }
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 0, 0, 0.2);
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+            from { top: 0; }
+            to { top: 100%; }
+        }
+
+        .tactical-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .neon-glow-red {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+
+        .sharp-border {
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            position: relative;
+        }
+        .sharp-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #ff0000;
+            border-left: 2px solid #ff0000;
+        }
+        .sharp-border::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #ff0000;
+            border-right: 2px solid #ff0000;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ff0000",
+                        "primary-container": "#ff0000",
+                        "on-primary-container": "#ffffff",
+                        "inverse-surface": "#e2e2e5",
+                        "surface-tint": "#ff0000",
+                        "surface-container-lowest": "#050607",
+                        "secondary": "#c6c6cc",
+                        "secondary-fixed-dim": "#c6c6cc",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#1a1c20",
+                        "on-secondary-container": "#b7b8be",
+                        "on-tertiary-container": "#002f33",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#7df4ff",
+                        "primary-fixed": "#ffdad4",
+                        "secondary-fixed": "#e2e2e8",
+                        "outline": "#b18780",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary": "#00dbe9",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container-low": "#121418",
+                        "surface": "#0a0b0d",
+                        "surface-container-highest": "#24262b",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "outline-variant": "#3a2a28",
+                        "background": "#0a0b0d",
+                        "surface-container": "#121418",
+                        "inverse-on-surface": "#2f3133",
+                        "on-tertiary": "#00363a",
+                        "on-background": "#e2e2e8",
+                        "surface-bright": "#1a1c20",
+                        "on-secondary": "#2f3035",
+                        "on-primary-container": "#ffffff",
+                        "on-secondary-fixed": "#1a1c20",
+                        "on-primary-fixed": "#410000",
+                        "tertiary-container": "#00a0aa",
+                        "on-primary-fixed-variant": "#930100",
+                        "on-error": "#690005",
+                        "surface-dim": "#0a0b0d",
+                        "on-surface-variant": "#c9a9a5",
+                        "inverse-primary": "#c00100",
+                        "surface-variant": "#1a1c20",
+                        "secondary-container": "#47494e",
+                        "on-secondary-fixed-variant": "#45474b",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-surface": "#e2e2e8",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "lg": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "label-md": ["JetBrains Mono"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "code-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md selection:bg-primary selection:text-white bg-background text-on-background tactical-grid">
+<!-- TopAppBar from SCREEN_27 -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_15px_rgba(255,0,0,0.15)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q"/>
+<span class="font-headline-lg text-[24px] font-black tracking-tighter text-primary uppercase">REDBOX</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Capacitaciones</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Comunidad</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-6 py-2.5 font-label-md font-bold uppercase tracking-widest scale-95 active:scale-90 transition-transform shadow-[0_0_20px_rgba(255,0,0,0.4)]">
+                Contáctenos
+            </button>
+</div>
+</div>
+</header>
+<!-- Hero Section / Background Container -->
+<main class="relative min-h-screen pt-32 pb-xl overflow-hidden">
+<!-- Background Asset Updated to IMAGE_31 -->
+<div class="fixed inset-0 z-[-1] opacity-30 grayscale contrast-125">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/80 to-background z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuVc9bIyAU-Q8asMBLkxSXqfnQD4AQY0ix4yyaWMTBBRL1cUSjGxzdeOX9pChqWsLtckVSMoNCaR6IljvxQ0jYBNOsHKQARpHmMDsawJQtaMycyz8cRJND5oqkobN7bEod929wHh_PNKXkX4NPHN_1DhVk7pjlxOcWu_8E5c_9hAZjZfXVL-ukpTKsN4sO4ys99GTXxwhUpnyZMPAp8CfH6fNHEmfpZRKYFMSFBCVjEnKVEnHGxRfNyJhPa')"></div>
+<div class="scanline"></div>
+</div>
+<div class="max-w-6xl mx-auto px-margin-desktop relative z-20">
+<!-- Header Header Block -->
+<div class="mb-xl border-l-4 border-primary pl-lg py-md bg-surface-container/80 backdrop-blur-md sharp-border">
+<div class="flex flex-col md:flex-row justify-between items-start gap-md">
+<div>
+<p class="font-code-sm text-primary mb-xs tracking-[0.3em] font-bold uppercase">[ CLASSIFIED // OPERATIONAL PROTOCOL ]</p>
+<h1 class="font-display-lg text-on-background uppercase mb-sm neon-glow-red">Terms of Service</h1>
+<p class="font-label-md text-on-surface-variant">VERSION 2.4.0-BETA | REVISED: OCTOBER 2024</p>
+</div>
+<div class="text-right hidden md:block">
+<p class="font-code-sm text-on-surface-variant">SECURE NODE: RDX-77</p>
+<p class="font-code-sm text-primary font-bold">STATUS: ACTIVE_DEFENSE</p>
+</div>
+</div>
+</div>
+<!-- Content Grid: Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Operational Limits -->
+<section class="md:col-span-7 bg-surface-container-low/90 sharp-border p-lg group">
+<div class="absolute top-0 right-0 p-sm opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h2 class="font-headline-lg text-primary mb-md flex items-center gap-sm">
+<span class="font-code-sm border border-primary px-sm">01</span>
+                    OPERATIONAL LIMITS
+                </h2>
+<div class="space-y-md font-body-md text-on-surface-variant leading-relaxed">
+<p>RedBox Cybersecurity deployment is restricted to authorized tactical environments only. Users are prohibited from utilizing system resources for offensive cyber warfare unless explicitly mandated by Section 8-B of the Industrial Defense Charter.</p>
+<ul class="list-none space-y-sm">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1">double_arrow</span>
+<span>Simultaneous monitoring capped at 10,000 nodes per operational unit.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1">double_arrow</span>
+<span>Encryption levels must not exceed localized sovereign regulations.</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-sm mt-1">double_arrow</span>
+<span>Zero-day vulnerability disclosure must follow the 24-hour rapid-response protocol.</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- User Responsibility -->
+<section class="md:col-span-5 bg-surface-container-high/90 sharp-border p-lg relative group">
+<h2 class="font-headline-lg text-on-background mb-md flex items-center gap-sm">
+<span class="font-code-sm bg-primary text-white px-sm">02</span>
+                    USER RESPONSIBILITY
+                </h2>
+<div class="space-y-md font-body-md text-on-surface-variant">
+<div class="bg-surface-container-lowest p-md border-l-2 border-primary italic text-primary/80 font-code-sm">
+                        "The operator is the final line of defense. Complacency is a system failure."
+                    </div>
+<p>Users maintain full liability for credentials and access tokens. Unauthorized sharing of biometric override keys results in immediate account decommissioning and forensic audit.</p>
+<div class="mt-lg border-t border-outline-variant/30 pt-md flex justify-between items-center">
+<span class="font-code-sm uppercase tracking-widest text-primary">Verification Required</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</div>
+</div>
+</section>
+<!-- Service Availability -->
+<section class="md:col-span-5 bg-surface-container-high/90 sharp-border p-lg flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-primary mb-md flex items-center gap-sm">
+<span class="font-code-sm border border-primary px-sm">03</span>
+                        AVAILABILITY
+                    </h2>
+<p class="font-body-md text-on-surface-variant mb-md">RedBox guarantees a 99.99% tactical uptime. Maintenance windows are scheduled during low-frequency threat cycles. In the event of a Category 5 breach, all services pivot to localized failsafe mode.</p>
+</div>
+<div class="grid grid-cols-2 gap-sm">
+<div class="p-sm border border-primary/20 bg-surface-container-lowest text-center">
+<p class="text-primary font-code-sm font-bold text-lg">99.99%</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">UPTIME GUARANTEE</p>
+</div>
+<div class="p-sm border border-primary/20 bg-surface-container-lowest text-center">
+<p class="text-primary font-code-sm font-bold text-lg">24/7/365</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">RAPID RESPONSE</p>
+</div>
+</div>
+</section>
+<!-- Intellectual Property -->
+<section class="md:col-span-7 bg-surface-container-low/90 sharp-border p-lg relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-primary" style="font-size: 160px;">copyright</span>
+</div>
+<h2 class="font-headline-lg text-on-background mb-md flex items-center gap-sm">
+<span class="font-code-sm bg-on-surface-variant text-surface px-sm">04</span>
+                    INTELLECTUAL PROPERTY
+                </h2>
+<div class="space-y-md font-body-md text-on-surface-variant">
+<p>All algorithms, neural weights, and threat signatures generated by the RedBox Neural Engine remain the exclusive property of REDBOX CYBERSECURITY. Reverse engineering or unauthorized de-obfuscation of proprietary binary blobs is strictly prohibited.</p>
+<div class="flex gap-md mt-md">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="font-code-sm text-[10px] uppercase">Registered Patent</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-sm">shield_with_heart</span>
+<span class="font-code-sm text-[10px] uppercase">Trade Secret Protected</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Action Footer -->
+<div class="md:col-span-12 mt-lg flex flex-col md:flex-row items-center justify-between gap-md p-lg bg-primary/10 border border-primary/30 backdrop-blur-sm sharp-border">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary animate-pulse text-3xl">warning</span>
+<p class="font-label-md text-on-background">By proceeding with system login, you acknowledge the tactical risks and operational constraints outlined above.</p>
+</div>
+<div class="flex gap-md">
+<button class="bg-transparent border border-primary/40 text-on-surface-variant px-lg py-sm font-label-md uppercase hover:bg-primary/5 transition-all">Decline Access</button>
+<button class="bg-primary text-white px-lg py-sm font-label-md uppercase font-bold hover:shadow-[0_0_20px_#ff0000] transition-all">Accept Protocols</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer from SCREEN_27 Style -->
+<footer class="bg-surface-dim border-t border-primary/30 w-full pt-20 pb-10 relative z-20">
+<div class="absolute inset-0 tactical-grid opacity-5 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Column 1: Brand Info -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q"/>
+<span class="font-headline-lg text-[24px] font-black tracking-tighter text-primary uppercase">REDBOX</span>
+</div>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                    Defensa ofensiva y formación de élite. Neutralizamos adversarios antes de que comprometan su activo más valioso.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-primary/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-primary/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-primary/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</a>
+</div>
+</div>
+<!-- Column 2: Servicios -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Servicios</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Pentesting</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Red Team</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Cloud Security</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Wireless Audit</a></li>
+</ul>
+</div>
+<!-- Column 3: Recursos -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Recursos</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Comunidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Blog</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Certificaciones</a></li>
+</ul>
+</div>
+<!-- Column 4: Contacto -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Contacto</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<span class="text-on-surface-variant font-body-md">info@redbox.security</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">call</span>
+<span class="text-on-surface-variant font-body-md">+34 900 RED BOX</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span class="text-on-surface-variant font-body-md">Sede Central de Operaciones<br/>Madrid, España</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom strip -->
+<div class="border-t border-primary/20 pt-10 flex flex-col lg:flex-row justify-between items-center gap-6">
+<div class="text-on-surface-variant/60 font-label-sm uppercase tracking-widest text-center lg:text-left">
+                © 2024 REDBOX CYBERSECURITY. TACTICAL INDUSTRIAL DEFENSE.
+            </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-primary font-bold uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Legal Notice</a>
+</div>
+<div class="flex gap-md opacity-40">
+<span class="font-code-sm text-on-surface-variant">LATENCY: 14MS</span>
+<span class="font-code-sm text-on-surface-variant">ENCRYPTION: AES-256-GCM</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Interaction for tactical feel
+    document.querySelectorAll('section').forEach(section => {
+        section.addEventListener('mousemove', (e) => {
+            const rect = section.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            section.style.setProperty('--mouse-x', `${x}px`);
+            section.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+</body></html>

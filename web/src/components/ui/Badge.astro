@@ -1,0 +1,19 @@
+---
+interface Props {
+  children: string;
+  variant?: 'primary' | 'neutral';
+  class?: string;
+}
+const { children, variant = 'primary', class: className } = Astro.props;
+---
+
+<span
+  class={[
+    'inline-block font-mono text-code-sm px-2 py-0.5 border',
+    variant === 'primary' && 'border-primary text-primary',
+    variant === 'neutral' && 'border-outline-variant text-on-surface-variant',
+    className,
+  ].filter(Boolean).join(' ')}
+>
+  {children}
+</span>

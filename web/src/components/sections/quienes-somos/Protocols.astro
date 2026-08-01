@@ -1,0 +1,62 @@
+---
+const VALUES = [
+  {
+    icon: 'security',
+    title: 'Integridad Radical',
+    text: 'Sin concesiones. Cada bit de datos está blindado bajo protocolos de encriptación cuántica y validación continua.',
+  },
+  {
+    icon: 'target',
+    title: 'Precisión Quirúrgica',
+    text: 'Eliminamos el ruido. Nuestras alertas son accionables, directas y basadas en inteligencia de campo real.',
+  },
+  {
+    icon: 'shield',
+    title: 'Defensa Absoluta',
+    text: 'No aceptamos el compromiso del sistema. Si hay una amenaza, la erradicamos antes de que se manifieste.',
+  },
+];
+---
+
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background" aria-labelledby="qs-protocols-title">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <!-- Imagen + Métrica flotante -->
+    <div class="relative group scroll-reveal">
+      <div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full opacity-50" aria-hidden="true"></div>
+      <div class="relative z-10 p-1 bg-primary/30">
+        <img
+          alt="Servidor de operaciones con luces rojas"
+          class="w-full h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
+          src="/image/macro_shot_of_server_hardware_with_glowing_red_status_lights_cyber_security.png"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 tactical-grid opacity-30 pointer-events-none" aria-hidden="true"></div>
+      </div>
+      
+    </div>
+
+    <!-- Texto + Valores -->
+    <div class="space-y-12 scroll-reveal">
+      <div class="space-y-4">
+        <p class="font-mono text-primary uppercase tracking-[.4em] font-bold text-[12px]">OPERATIONAL_VALUES</p>
+        <h2 id="qs-protocols-title" class="font-headline-lg text-display-lg text-on-surface uppercase leading-none">
+          Nuestros <br /><span class="text-primary italic">Protocolos</span>
+        </h2>
+      </div>
+      <div class="space-y-10">
+        {VALUES.map((v) => (
+          <div class="flex gap-8 group">
+            <div class="flex-shrink-0 w-16 h-16 bg-primary/10 border border-primary/30 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+              <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl" style="font-variation-settings: 'FILL' 1;" aria-hidden="true">{v.icon}</span>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-headline-sm text-2xl text-on-surface uppercase tracking-tight">{v.title}</h4>
+              <p class="text-on-surface/60 leading-relaxed">{v.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

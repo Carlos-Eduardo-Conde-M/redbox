@@ -1,0 +1,528 @@
+<!DOCTYPE html><html class="dark" lang="es" style="width: 1280px; height: 4630px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>RedBox Cybersecurity | Ciberseguridad Ofensiva de Élite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;900&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tactical-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 26, 26, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 26, 26, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .tactical-grid-fine {
+            background-image: 
+                linear-gradient(to right, rgba(255, 26, 26, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 26, 26, 0.03) 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+        .sharp-border {
+            border: 1px solid rgba(255, 26, 26, 0.2);
+            position: relative;
+        }
+        .sharp-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #ff1a1a;
+            border-left: 2px solid #ff1a1a;
+        }
+        .sharp-border::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #ff1a1a;
+            border-right: 2px solid #ff1a1a;
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(255, 26, 26, 0.5);
+        }
+        .scanner-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff1a1a, transparent);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            animation: scan 4s linear infinite;
+            opacity: 0.3;
+            z-index: 10;
+            pointer-events: none;
+        }
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        .glitch-text:hover {
+            animation: glitch 0.2s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: 2px 0 #ff1a1a; }
+            25% { transform: translate(-1px, 1px); text-shadow: -2px 0 #00f2ff; }
+            50% { transform: translate(1px, -1px); }
+            75% { transform: translate(-1px, -1px); }
+            100% { transform: translate(0); }
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bento-card {
+            background: rgba(18, 20, 24, 0.8);
+            border: 1px solid rgba(255, 26, 26, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            border-color: rgba(255, 26, 26, 0.5);
+            background: rgba(26, 28, 34, 0.95);
+            box-shadow: inset 0 0 30px rgba(255, 26, 26, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        /* New Hero Logo Animations */
+        @keyframes logo-breathing {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 26, 26, 0.4)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 20px rgba(255, 26, 26, 0.8)); transform: scale(1.02); }
+        }
+        @keyframes logo-glitch {
+            0% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            2% { clip-path: inset(10% 0 80% 0); transform: translate(-5px, 2px); }
+            4% { clip-path: inset(80% 0 5% 0); transform: translate(5px, -2px); }
+            6% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            94% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            96% { clip-path: inset(40% 0 40% 0); transform: translate(8px, 4px); }
+            98% { clip-path: inset(20% 0 60% 0); transform: translate(-8px, -4px); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+        }
+        .tactical-logo-anim {
+            animation: logo-breathing 4s ease-in-out infinite, logo-glitch 8s step-end infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#0a0b0d",
+                        "surface": "#0a0b0d",
+                        "primary": "#ff1a1a",
+                        "primary-container": "#e60000",
+                        "on-background": "#e2e2e8",
+                        "on-surface": "#e2e2e8",
+                        "on-surface-variant": "#c9a9a5",
+                        "outline-variant": "#3a2a28",
+                        "surface-container-low": "#121418",
+                        "surface-container-high": "#1a1c20",
+                        "surface-container-highest": "#24262b",
+                        "surface-container-lowest": "#050607"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "48px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["JetBrains Mono"],
+                        "headline-lg": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden tactical-grid">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_15px_rgba(230,0,0,0.15)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q">
+<span class="font-headline-md text-headline-md font-black tracking-tighter text-primary">REDBOX</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md transition-colors" href="#">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#capacitacion">Capacitaciones</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Comunidad</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-6 py-2.5 font-label-md font-bold uppercase tracking-widest scale-95 active:scale-90 transition-transform shadow-[0_0_20px_rgba(230,0,0,0.4)]">
+                Contáctenos
+            </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 tactical-grid-fine opacity-20"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background/80"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 items-center scroll-reveal visible">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-3 px-4 py-1.5 bg-primary/5 border border-primary/40 animate-pulse">
+<span class="font-label-sm text-primary uppercase tracking-[0.3em] font-bold">Protocol: Offensive_Mode // Active</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-background max-w-xl leading-tight uppercase tracking-tighter neon-glow">
+                    La mejor defensa es un <span class="text-white bg-primary px-4 border-x-4 border-white/20">ataque</span> bien ejecutado.
+                </h1>
+<p class="font-body-lg text-on-surface-variant max-w-lg leading-relaxed uppercase tracking-wide">
+                    [OPERACIONES_OFENSIVAS]: Ciberseguridad de élite para infraestructuras críticas. Neutralizamos amenazas replicando los ataques más sofisticados del mundo real.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white px-8 py-4 font-label-md font-bold uppercase tracking-[0.2em] hover:shadow-[0_0_30px_#ff1a1a] transition-all border border-primary">
+                        Iniciar Evaluación
+                    </button>
+<div class="font-mono text-[10px] text-primary/60 flex flex-col justify-center">
+<div class="">SYS_STATUS: <span class="text-primary font-bold">NOMINAL</span></div>
+<div class="">SEC_LEVEL: <span class="text-primary font-bold">ALPHA_7</span></div>
+</div>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="aspect-square relative flex items-center justify-center p-8">
+<div class="absolute inset-0 border border-primary/20 animate-[spin_40s_linear_infinite]"></div>
+<div class="w-full h-full sharp-border overflow-hidden bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<div class="scanner-line"></div>
+<img alt="REDBOX Tactical Logo" class="w-4/5 h-auto object-contain tactical-logo-anim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClBq34JluSh3HLv5fwmetHhkj14N9httEF7JEEG9MjHzIgwEkwrdO6IPiL_FghQjNp1RvnB-i-YD1tT9z_pdXX5-i0Ceo5EN4ONU_X5Q6iiVY9AYOI-QqZTAO3j7ng3DZhIZh1ewc2NkN9Hmml_c46--QjSyhksW3cwEDl3DL7eeIsU3yUZp-NrKNeb9zhTaiQiB4iZ3jCvkn-b26ZeLlOttjsLiLbp0hEh5vimjDCLuLf5QKhSdDgVMEYGsPMWieHyGM">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Who We Are (Quiénes Somos) -->
+<section class="py-24 bg-surface border-y border-outline-variant/30 relative" id="nosotros">
+<div class="absolute inset-0 tactical-grid opacity-10 pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop scroll-reveal visible">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold border-l-4 border-primary pl-4">Quiénes Somos</h2>
+<h3 class="font-headline-md text-headline-md text-on-background mb-6 uppercase">Expertos en Ciberseguridad Ofensiva</h3>
+<p class="font-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                        Somos una firma de consultoría y entrenamiento avanzado especializada en ciberseguridad ofensiva. Nuestro equipo está compuesto por hackers éticos con experiencia en operaciones reales de Red Team.
+                    </p>
+<div class="bg-primary/5 border border-primary/20 p-6 font-mono text-sm text-primary/80">
+                        "En RedBox, no solo protegemos; comprendemos la mente del atacante para construir defensas infranqueables."
+                    </div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-high p-6 sharp-border">
+<div class="text-primary font-headline-lg mb-2">10+</div>
+<div class="font-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Años de Operaciones</div>
+</div>
+<div class="bg-surface-container-high p-6 sharp-border">
+<div class="text-primary font-headline-lg mb-2">500+</div>
+<div class="font-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Intrusiones Exitosas</div>
+</div>
+<div class="bg-surface-container-high p-6 sharp-border">
+<div class="text-primary font-headline-lg mb-2">24/7</div>
+<div class="font-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Monitoreo Táctico</div>
+</div>
+<div class="bg-surface-container-high p-6 sharp-border">
+<div class="text-primary font-headline-lg mb-2">100%</div>
+<div class="font-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Compromiso</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- What We Do (Qué Hacemos) -->
+<section class="py-24 bg-surface-container-low px-margin-desktop relative overflow-hidden">
+<div class="absolute inset-0 tactical-grid-fine opacity-10"></div>
+<div class="max-w-container-max mx-auto scroll-reveal visible">
+<div class="text-center mb-16">
+<h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">Qué Hacemos</h2>
+<h3 class="font-headline-md text-headline-md text-on-background max-w-3xl mx-auto uppercase">Evaluamos la resistencia de tu organización frente a amenazas reales</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bento-card p-8 group relative overflow-hidden" style="transition-delay: 0s;">
+<div class="scanner-line"></div>
+<div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 border border-primary/30 text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h4 class="font-headline-sm mb-4 uppercase text-primary">Replicación de APT</h4>
+<p class="text-on-surface-variant font-body-md">Simulamos grupos de Amenaza Persistente Avanzada (APT) para probar tus protocolos de detección y respuesta bajo presión extrema.</p>
+</div>
+<div class="bento-card p-8 group relative overflow-hidden" style="transition-delay: 0.1s;">
+<div class="scanner-line" style="animation-delay: 1s"></div>
+<div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 border border-primary/30 text-primary">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<h4 class="font-headline-sm mb-4 uppercase text-primary">Metodología TTP</h4>
+<p class="text-on-surface-variant font-body-md">Analizamos Tácticas, Técnicas y Procedimientos actuales utilizados por adversarios reales para identificar brechas en tu arquitectura.</p>
+</div>
+<div class="bento-card p-8 group relative overflow-hidden" style="transition-delay: 0.2s;">
+<div class="scanner-line" style="animation-delay: 2s"></div>
+<div class="w-12 h-12 bg-primary/10 flex items-center justify-center mb-6 border border-primary/30 text-primary">
+<span class="material-symbols-outlined">biotech</span>
+</div>
+<h4 class="font-headline-sm mb-4 uppercase text-primary">Ingeniería Inversa</h4>
+<p class="text-on-surface-variant font-body-md">Desglosamos malware y exploits personalizados para entender cómo operan dentro de infraestructuras específicas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Services (Nuestros Servicios) -->
+<section class="py-24 bg-surface px-margin-desktop relative" id="servicios">
+<div class="absolute inset-0 tactical-grid opacity-10"></div>
+<div class="max-w-container-max mx-auto scroll-reveal visible">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl border-l-4 border-primary pl-6">
+<h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">Capacidades Ofensivas</h2>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Soluciones de seguridad diseñadas a la medida de tu infraestructura</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Item -->
+<div class="bento-card p-6 sharp-border hover:bg-surface-container-high group" style="transition-delay: 0.3s;">
+<div class="font-mono text-[9px] text-primary/60 mb-2">[PROTOCOL: RT_01]</div>
+<h4 class="font-label-md text-primary mb-3 uppercase tracking-tighter">Red Team Exercises</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Operaciones encubiertas de largo alcance para probar la resiliencia organizacional completa.</p>
+</div>
+<div class="bento-card p-6 sharp-border hover:bg-surface-container-high group" style="transition-delay: 0.4s;">
+<div class="font-mono text-[9px] text-primary/60 mb-2">[PROTOCOL: WP_02]</div>
+<h4 class="font-label-md text-primary mb-3 uppercase tracking-tighter">Web Pentesting</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Auditorías profundas de aplicaciones web buscando vulnerabilidades lógicas y críticas.</p>
+</div>
+<div class="bento-card p-6 sharp-border hover:bg-surface-container-high group" style="transition-delay: 0.5s;">
+<div class="font-mono text-[9px] text-primary/60 mb-2">[PROTOCOL: WA_03]</div>
+<h4 class="font-label-md text-primary mb-3 uppercase tracking-tighter">Wireless Audit</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Evaluación de perímetros inalámbricos y protocolos de comunicación por radiofrecuencia.</p>
+</div>
+<div class="bento-card p-6 sharp-border hover:bg-surface-container-high group" style="transition-delay: 0.6s;">
+<div class="font-mono text-[9px] text-primary/60 mb-2">[PROTOCOL: CS_04]</div>
+<h4 class="font-label-md text-primary mb-3 uppercase tracking-tighter">Cloud Security</h4>
+<p class="text-on-surface-variant text-sm font-body-md">Ataques simulados a entornos AWS/Azure/GCP para verificar configuraciones y permisos.</p>
+</div>
+</div>
+<div class="mt-12 h-64 sharp-border overflow-hidden relative group">
+<div class="scanner-line"></div>
+<img alt="Circuit Board Hardware" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/AP1WRLtwGchInF868tkudZ5za453FzavyaG3-eAT_ErG8WMzxQQF0o9axfVvlEv9pjEh_rT_rK6gbIvUUtc9WVa1dg0Y_6dD1oVPeNZ2rmoZqXYO5iF-t2wziDnlS0aboPwDrn9GnrVH_v5bg-TDmLLNpPDP8cLNd0FyEgovDdxC52C3X9FAUCjdj0bx00xtlVbGuxD3PvoDyfcvFqBvzSJUyVv2tZuOmRaK8Upv6PFrQjVlHUdd17uhO5XWopIb">
+<div class="absolute bottom-4 right-6 font-mono text-[10px] text-primary">HARDWARE_INTEL: ACTIVE // CIRCUIT_TRACE_0x882</div>
+</div>
+</div>
+</section>
+<!-- Training & Courses (Capacitación y cursos) -->
+<section class="py-24 bg-surface-container-lowest px-margin-desktop relative overflow-hidden" id="capacitacion">
+<div class="absolute inset-0 tactical-grid-fine opacity-20"></div>
+<div class="max-w-container-max mx-auto relative z-10 scroll-reveal visible">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">Academia Táctica</h2>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Formación de élite para la próxima generación de profesionales</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bento-card p-10 relative group overflow-hidden" style="transition-delay: 0.7s;">
+<div class="scanner-line"></div>
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-[100px]">terminal</span>
+</div>
+<div class="font-mono text-[10px] text-primary/60 mb-2">TYPE_STK: OFFENSIVE_HACKING</div>
+<h4 class="font-headline-sm text-primary mb-4 uppercase">Offensive Hacking Mastery</h4>
+<p class="text-on-surface-variant mb-8 font-body-md leading-relaxed">Domina el arte de la explotación desde cero hasta técnicas avanzadas de evasión de EDR y bypass de perímetros.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> ESCANEO Y ENUMERACIÓN</li>
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> EXPLOIT DEVELOPMENT</li>
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> POST-EXPLOITACIÓN</li>
+</ul>
+<button class="w-full py-4 border border-primary text-primary font-label-md hover:bg-primary hover:text-white transition-all uppercase tracking-[0.3em] font-bold">Ver Programa</button>
+</div>
+<div class="bento-card p-10 relative group overflow-hidden" style="transition-delay: 0.8s;">
+<div class="scanner-line" style="animation-delay: 1.5s"></div>
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary">
+<span class="material-symbols-outlined text-[100px]">hub</span>
+</div>
+<div class="font-mono text-[10px] text-primary/60 mb-2">TYPE_STK: AD_EXPLOIT</div>
+<h4 class="font-headline-sm text-primary mb-4 uppercase">Active Directory Exploitation</h4>
+<p class="text-on-surface-variant mb-8 font-body-md leading-relaxed">Laboratorios dedicados a la infraestructura de dominios. Aprende Kerberoasting, Bloodhound y Golden Ticket attacks.</p>
+<ul class="space-y-3 mb-10">
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> MOVIMIENTO LATERAL</li>
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> ESCALADA DE PRIVILEGIOS</li>
+<li class="flex items-center gap-3 text-sm font-label-md text-on-surface"><span class="w-1.5 h-1.5 bg-primary animate-pulse"></span> DOMAIN DOMINANCE</li>
+</ul>
+<button class="w-full py-4 border border-primary text-primary font-label-md hover:bg-primary hover:text-white transition-all uppercase tracking-[0.3em] font-bold">Acceder a Labs</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Certifications -->
+<section class="py-24 bg-surface px-margin-desktop border-t border-outline-variant/30" id="certificaciones">
+<div class="max-w-container-max mx-auto scroll-reveal visible">
+<div class="text-center mb-16">
+<h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">Credenciales Profesionales</h2>
+<h3 class="font-headline-md text-headline-md text-on-background uppercase">Respaldados por los Estándares de Élite de la Industria Global</h3>
+</div>
+<div class="flex justify-center items-center py-8">
+    <div class="relative group max-w-4xl w-full sharp-border p-2 bg-black/40 backdrop-blur-sm">
+        <div class="scanner-line"></div>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl1dUMKefuxb5GkGDc3PnpBVihcNdn5v0WGRAGOL80BbD4CVcF1-o9PB3EZiQGTWzDbzc6kcUCoPIGWHKIKYmy83HFjly8eB5hd9iku7Z3ZwuQ3o9RPTjrHxE53sprOjNRyGjo5jIglakMJ3-wmCtpSnf6_SUvIxhW72vf3HRLo_ZsFxxCZ3EHt91bV_F0pLLfEiswCpCM5S-OzhyavqtB6yBwbzCbDfs4La9_NuPkBBMhLDYZPAjUznsCPaVwyVPeCTo" alt="Certificaciones Profesionales" class="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-700 shadow-[0_0_30px_rgba(255,26,26,0.2)] group-hover:shadow-[0_0_50px_rgba(255,26,26,0.4)]">
+        <div class="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-primary opacity-50"></div>
+        <div class="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-primary opacity-50"></div>
+    </div>
+</div>
+<div class="mt-16 sharp-border h-80 overflow-hidden group">
+<div class="scanner-line"></div>
+<img alt="Macro hardware" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/AP1WRLssGq8YvRBQNGwYWQ-aBZZR0spuDAWsXVbc4lyPaZE_NNpfMw9yL8sC4OAgU-DSCH-QkkN7j9e7fe0_G3qkGA5l9m1SUdK1K-27Rtw9RowDIM4pH9o6K9H5SwxEOEtmSGkLrwUUD2YAlACi3Msb8pGeNEaTIKxPE9oJJEzGctWkSsP9Iya4sKG7Fl_FCPGFdoUNXdl_YYISz5OxFDodxdhz5Yk1NrAoyy2jbgmzzhjPBdBNm2m1tjGnSQ8">
+<div class="absolute top-4 left-6 font-mono text-[10px] text-primary bg-black/60 px-2 py-1">SEC_NODE: [REDACTED] // STATUS: NOMINAL</div>
+</div>
+</div>
+</section>
+<!-- Emergency Banner -->
+<section class="bg-primary py-12 px-margin-desktop relative overflow-hidden">
+<div class="absolute inset-0 scanner-line opacity-20"></div>
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-8 scroll-reveal visible">
+<div class="border-l-4 border-white pl-6">
+<h3 class="font-headline-sm text-white mb-2 uppercase tracking-tight">¿Sufre un incidente activo?</h3>
+<p class="font-mono text-xs text-white/90 uppercase tracking-widest">[URGENT_DEPLOYMENT]: Despliegue inmediato de nuestro equipo de Respuesta a Incidentes.</p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="text-right">
+<div class="font-label-sm text-white/60 uppercase font-bold tracking-widest mb-1">PROTOCOLO DE EMERGENCIA</div>
+<span class="font-headline-sm text-white font-black tracking-tighter">LÍNEA ROJA: +34 900 RED BOX</span>
+</div>
+<button class="bg-white text-primary px-10 py-4 font-label-md font-black uppercase tracking-[0.3em] shadow-2xl hover:scale-105 transition-transform active:scale-95">
+                    EMERGENCIA
+                </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-outline-variant/30 w-full pt-20 pb-10 relative">
+<div class="absolute inset-0 tactical-grid-fine opacity-5"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop scroll-reveal visible">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Column 1: Brand Info -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<img alt="REDBOX Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q">
+<span class="font-headline-md text-headline-md font-black tracking-tighter text-primary">REDBOX</span>
+</div>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                    Defensa ofensiva y formación de élite. Neutralizamos adversarios antes de que comprometan su activo más valioso.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</a>
+</div>
+</div>
+<!-- Column 2: Servicios -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Servicios</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Pentesting</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Red Team</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Cloud Security</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Wireless Audit</a></li>
+</ul>
+</div>
+<!-- Column 3: Recursos -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Recursos</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Comunidad</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Blog</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Certificaciones</a></li>
+</ul>
+</div>
+<!-- Column 4: Contacto -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Contacto</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<span class="text-on-surface-variant font-body-md">info@redbox.security</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">call</span>
+<span class="text-on-surface-variant font-body-md">+34 900 RED BOX</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span class="text-on-surface-variant font-body-md">Sede Central de Operaciones<br>Madrid, España</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom strip -->
+<div class="border-t border-outline-variant/20 pt-10 flex flex-col lg:flex-row justify-between items-center gap-6">
+<div class="text-on-surface-variant/60 font-label-sm uppercase tracking-widest text-center lg:text-left">
+                © 2024 REDBOX CYBERSECURITY. TODOS LOS DERECHOS RESERVADOS.
+            </div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Legal Notice</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+    // Tactical Reveal Observer
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Add random animation delays to bento cards for staggered entry
+    document.querySelectorAll('.bento-card').forEach((el, index) => {
+        el.style.transitionDelay = (index * 0.1) + 's';
+    });
+</script>
+
+
+</body></html>

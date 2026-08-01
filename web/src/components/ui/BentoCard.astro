@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+  children?: any;
+  hoverable?: boolean;
+}
+const { class: className, hoverable = false } = Astro.props;
+---
+
+<div class={['bento-card', hoverable ? 'cursor-pointer' : '', className].filter(Boolean).join(' ')}>
+  <slot />
+</div>

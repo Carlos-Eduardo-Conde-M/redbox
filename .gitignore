@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# build output
+web/dist/
+web/.astro/
+cms/dist/
+cms/build/
+cms/.strapi/
+cms/.strapi-updater.json
+cms/.strapi-cloud.json
+
+# env
+.env
+.env.production
+
+# uploads (local dev media, not source-controlled)
+cms/public/uploads/*
+!cms/public/uploads/.gitkeep
+
+# logs
+*.log
+npm-debug.log*
+
+# OS/editor
+.DS_Store
+.idea/
+
+# local sqlite (should not be used, but just in case)
+*.sqlite
+*.sqlite3

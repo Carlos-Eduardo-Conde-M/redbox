@@ -1,0 +1,503 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>REDBOX - BLOG: FRONT LINE INTELLIGENCE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Geist:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#410000",
+                    "inverse-surface": "#e2e2e5",
+                    "secondary-fixed": "#e2e2e8",
+                    "surface-dim": "#121416",
+                    "on-tertiary-container": "#002f33",
+                    "surface": "#121416",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed": "#7df4ff",
+                    "tertiary": "#00dbe9",
+                    "surface-tint": "#ffb4a8",
+                    "secondary-fixed-dim": "#c6c6cc",
+                    "primary-container": "#ff5540",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "surface-container-lowest": "#0c0e10",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "outline-variant": "#603e39",
+                    "inverse-primary": "#c00100",
+                    "on-primary-fixed-variant": "#930100",
+                    "background": "#121416",
+                    "inverse-on-surface": "#2f3133",
+                    "surface-container-highest": "#333537",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "surface-container": "#1e2022",
+                    "on-primary": "#690100",
+                    "error-container": "#93000a",
+                    "primary": "#ffb4a8",
+                    "surface-bright": "#37393b",
+                    "surface-variant": "#333537",
+                    "outline": "#b18780",
+                    "on-secondary-fixed-variant": "#45474b",
+                    "on-error-container": "#ffdad6",
+                    "secondary": "#c6c6cc",
+                    "on-secondary-fixed": "#1a1c20",
+                    "tertiary-container": "#00a0aa",
+                    "primary-fixed": "#ffdad4",
+                    "on-primary-container": "#5c0000",
+                    "surface-container-low": "#1a1c1e",
+                    "on-tertiary-fixed": "#002022",
+                    "on-surface": "#e2e2e5",
+                    "on-tertiary": "#00363a",
+                    "on-background": "#e2e2e5",
+                    "on-surface-variant": "#ebbbb4",
+                    "on-error": "#690005",
+                    "on-secondary-container": "#b7b8be",
+                    "surface-container-high": "#282a2c",
+                    "secondary-container": "#47494e",
+                    "on-secondary": "#2f3035",
+                    "red-accent": "#FF0000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "xl": "40px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "code-sm": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Geist"],
+                    "label-md": ["JetBrains Mono"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "display-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "code-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .kinetic-scanline {
+            background: linear-gradient(to bottom, transparent 0%, rgba(255, 0, 0, 0.05) 50%, transparent 100%);
+            background-size: 100% 4px;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .tactical-border {
+            border: 1px solid rgba(177, 135, 128, 0.2);
+            position: relative;
+        }
+
+        .tactical-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid #FF0000;
+            border-left: 2px solid #FF0000;
+        }
+
+        .no-radius {
+            border-radius: 0 !important;
+        }
+
+        .glitch-hover:hover {
+            animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        .terminal-scroll {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #FF0000;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #FF0000; }
+        }
+
+        .bg-circuit {
+            background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLswpX9a55P5Z-Xv_6oWq7S2z1Y6pYx-3X9wX-4Y5Z-6A7B8C9D0E1F2G3H4I5J6K7L8M9N0O1P2Q3R4S5T6U7V8W9X0Y1Z2');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface bg-background selection:bg-red-accent/30 overflow-x-hidden">
+<!-- TopAppBar (Official Design System) -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_15px_rgba(230,0,0,0.15)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-3"><div class="flex items-center gap-3 group cursor-pointer"><div class="relative"><div class="absolute inset-0 bg-red-accent/20 blur-lg rounded-full animate-pulse"></div><img alt="REDBOX Logo" class="h-10 w-auto relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q"></div><span class="font-headline-md text-headline-md font-black tracking-tighter text-primary group-hover:text-white transition-colors">REDBOX</span></div></div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Capacitaciones</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md" href="#">Comunidad</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md transition-colors tracking-widest uppercase" href="#">Blog</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-red-accent text-white px-6 py-2.5 font-label-md font-bold uppercase tracking-widest scale-95 active:scale-90 transition-all hover:bg-red-700 shadow-[0_0_20px_rgba(255,0,0,0.4)] no-radius glitch-hover">CONTÁCTENOS</button>
+</div>
+</div>
+</header>
+<main class="pt-20 bg-circuit">
+<!-- Hero Section (Academy Style) -->
+<section class="relative min-h-[60vh] flex items-center overflow-hidden border-b border-outline-variant/20 bg-background/80 backdrop-blur-sm">
+<div class="absolute inset-0 kinetic-scanline opacity-20"></div>
+<div class="relative z-10 px-margin-desktop max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 bg-red-accent/10 border border-red-accent/30 px-3 py-1 no-radius">
+<span class="w-2 h-2 bg-red-accent animate-pulse"></span>
+<span class="font-code-sm text-code-sm text-red-accent tracking-widest uppercase">LIVE INTELLIGENCE FEED</span>
+</div>
+<h1 class="font-display-lg text-display-lg leading-tight uppercase">Reportes Desde El Frente</h1>
+<p class="text-on-surface-variant max-w-xl font-body-md leading-relaxed border-l-2 border-red-accent/30 pl-6">
+                    Compartiendo conocimiento y análisis del frente de batalla. Espacio dedicado a la investigación técnica, análisis de malware y tácticas de evasión de última generación.
+                </p>
+<div class="flex gap-4">
+<button class="bg-red-accent text-white px-8 py-4 no-radius font-bold uppercase tracking-widest hover:bg-red-700 transition-all glitch-hover">EXPLORAR ARCHIVOS</button>
+<button class="border border-outline-variant text-on-surface px-8 py-4 no-radius font-bold uppercase tracking-widest hover:bg-white/5 transition-all">SISTEMA EDR</button>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="tactical-border bg-surface-container-lowest/90 p-8 shadow-2xl">
+<div class="flex justify-between border-b border-outline-variant/30 pb-4 mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-accent">terminal</span>
+<span class="font-code-sm text-red-accent">SEC_MONITOR_v4.2</span>
+</div>
+<span class="font-code-sm text-on-surface-variant">NODE: 71.22.09.AX</span>
+</div>
+<div class="space-y-4 font-code-sm">
+<p class="text-tertiary terminal-scroll">[SYSTEM] Initializing threat hunt protocol...</p>
+<p class="text-on-surface-variant opacity-80">&gt; Scanning network sectors 0x00 to 0x4F</p>
+<p class="text-red-accent flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">warning</span>
+                            CRITICAL: Buffer overflow detected in SCADA logic
+                        </p>
+<div class="w-full h-1.5 bg-surface-container-high mt-4">
+<div class="h-full bg-red-accent w-3/4 animate-pulse"></div>
+</div>
+<div class="grid grid-cols-8 gap-1 pt-6 opacity-40">
+<script>
+                                for(let i=0; i<24; i++) {
+                                    document.write(`<div class="h-4 ${Math.random() > 0.8 ? 'bg-red-accent animate-pulse' : 'bg-outline-variant/20'}"></div>`);
+                                }
+                            </script><div class="h-4 bg-red-accent animate-pulse"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-red-accent animate-pulse"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-red-accent animate-pulse"></div><div class="h-4 bg-red-accent animate-pulse"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div><div class="h-4 bg-outline-variant/20"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Blog Content (Academy Modular Card Style) -->
+<section class="py-20 px-margin-desktop max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+<!-- Articles Column -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Featured Article (Academy Highlight Card Style) -->
+<article class="tactical-border bg-surface-container-lowest group overflow-hidden">
+<div class="flex flex-col md:flex-row">
+<div class="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
+<img alt="Featured Article Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida/AP1WRLukONp3dxD0f6-vKSycsp07L80gEjFEIq3_mnCQaG5ZOd0FzrlQic-NozZVIhAYAVkPCZOe4DDRKqVmvCztgjJSlxfkleLTuPwNxpsfod5D6qT_ni4qwSkER0efwpf0IlayxOaIPXi51E4imMAbJnha2mjhgGV6nJxpR5BaSPxJt4mLaIRGrk0VqbrPBO5N_LAvXV7-xf0cng9mKRnY37VGTJdpV5t72PFThMZ1Iu7OKM9bQw29_cfpHTM">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-red-accent text-white px-3 py-1 font-label-md text-[10px] no-radius uppercase font-bold tracking-tighter">FEATURED REPORT</span>
+</div>
+</div>
+<div class="md:w-1/2 p-8 flex flex-col justify-center gap-4">
+<div class="flex items-center gap-4 text-on-surface-variant font-code-sm text-[12px]">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> OCT 24, 2024</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bolt</span> HIGH SEVERITY</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg group-hover:text-red-accent transition-colors leading-tight uppercase">Análisis de Malware: Nuevas Variantes de Ransomware</h2>
+<p class="text-on-surface-variant text-sm line-clamp-3">
+                            Aumento del 140% en ataques dirigidos a sistemas PLC industriales. El nuevo motor utiliza técnicas de anti-debugging que evaden sandboxes tradicionales.
+                        </p>
+<button class="w-fit inline-flex items-center gap-2 text-white bg-red-accent px-6 py-3 no-radius font-bold uppercase text-xs tracking-widest hover:bg-red-700 transition-all mt-2">
+                            LEER REPORTE
+                            <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Grid of Articles (Academy Grid Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Article 1 -->
+<article class="tactical-border bg-surface-container-lowest group flex flex-col hover:border-red-accent/50 transition-colors">
+<div class="relative h-48 overflow-hidden">
+<img alt="Industrial SCADA" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLuVc9bIyAU-Q8asMBLkxSXqfnQD4AQY0ix4yyaWMTBBRL1cUSjGxzdeOX9pChqWsLtckVSMoNCaR6IljvxQ0jYBNOsHKQARpHmMDsawJQtaMycyz8cRJND5oqkobN7bEod929wHh_PNKXkX4NPHN_1DhVk7pjlxOcWu_8E5c_9hAZjZfXVL-ukpTKsN4sO4ys99GTXxwhUpnyZMPAp8CfH6fNHEmfpZRKYFMSFBCVjEnKVEnHGxRfNyJhPa">
+<div class="absolute inset-0 bg-red-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-surface-container-lowest/90 border border-outline-variant/30 text-on-surface px-2 py-1 font-code-sm text-[10px] uppercase tracking-widest">[RESEARCH]</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col gap-3">
+<h3 class="font-label-md text-label-md font-bold uppercase leading-tight group-hover:text-red-accent transition-colors">0-Day Disclosure: Vulnerabilidades en Protocolos SCADA</h3>
+<p class="text-on-surface-variant text-sm line-clamp-3">Exploramos el fallo de desbordamiento de búfer en la pila TCP/IP que permite la ejecución remota de código en controladores.</p>
+<div class="mt-auto pt-6 flex justify-between items-center border-t border-outline-variant/10">
+<span class="font-code-sm text-[10px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 12 MIN READ</span>
+<button class="text-red-accent font-bold uppercase text-xs tracking-widest flex items-center gap-1">
+                                LEER <span class="material-symbols-outlined text-[18px]">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="tactical-border bg-surface-container-lowest group flex flex-col hover:border-red-accent/50 transition-colors">
+<div class="relative h-48 overflow-hidden">
+<img alt="Cybersecurity Terminal" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLubECqdGxGuxNpywU_SLt7H1_lTiblc87WGBMLFwQwEDtgAXIHFkSNeCZYa-jKjwXM1gSS8lA3fexXOGhRQH5fiX6SXxbPr3e8PTPMqRvwFxQyrErD5Xvqy5tfi6QLrwI9yO7WV6fdJ8aocFpS7JuO_kUy40_7Z6X9pYDCDO4phFYE1Pex-7AoXBp700hrJM9Q_gRFBU9-9FOImo9QzzFBJ5wPog2UfAZhGcCt9UGgrwUWjbCAgliUHpaBZ">
+<div class="absolute inset-0 bg-red-accent/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-surface-container-lowest/90 border border-outline-variant/30 text-on-surface px-2 py-1 font-code-sm text-[10px] uppercase tracking-widest">[EXPLOIT]</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col gap-3">
+<h3 class="font-label-md text-label-md font-bold uppercase leading-tight group-hover:text-red-accent transition-colors">Guía Táctica: Evasión de EDR mediante Inyección</h3>
+<p class="text-on-surface-variant text-sm line-clamp-3">Metodología paso a paso para la inyección reflectante de DLLs y técnicas de bypass de hooks en Windows 11.</p>
+<div class="mt-auto pt-6 flex justify-between items-center border-t border-outline-variant/10">
+<span class="font-code-sm text-[10px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 18 MIN READ</span>
+<button class="text-red-accent font-bold uppercase text-xs tracking-widest flex items-center gap-1">
+                                LEER <span class="material-symbols-outlined text-[18px]">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center gap-4 pt-8">
+<button class="w-12 h-12 flex items-center justify-center tactical-border bg-red-accent text-white no-radius">1</button>
+<button class="w-12 h-12 flex items-center justify-center tactical-border bg-surface-container-lowest hover:bg-red-accent/10 transition-colors no-radius">2</button>
+<button class="w-12 h-12 flex items-center justify-center tactical-border bg-surface-container-lowest hover:bg-red-accent/10 transition-colors no-radius">3</button>
+<button class="w-12 h-12 flex items-center justify-center tactical-border bg-surface-container-lowest hover:bg-red-accent/10 transition-colors no-radius">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Sidebar Panel (Academy Aside Style) -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Categories (Academy Sidebar) -->
+<div class="tactical-border bg-surface-container-lowest/90 backdrop-blur-sm p-6 shadow-xl">
+<h4 class="font-label-md text-label-md font-bold text-red-accent mb-6 flex items-center gap-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-red-accent">category</span>
+                    CATEGORÍAS DE INTELIGENCIA
+                </h4>
+<ul class="space-y-2">
+<li class="">
+<a class="flex justify-between items-center group p-3 hover:bg-red-accent/5 border-b border-outline-variant/10 transition-colors" href="#">
+<span class="text-on-surface group-hover:text-red-accent transition-colors font-label-md">Malware Analysis</span>
+<span class="font-code-sm text-[10px] bg-red-accent/10 text-red-accent px-2 py-0.5">24</span>
+</a>
+</li>
+<li class="">
+<a class="flex justify-between items-center group p-3 hover:bg-red-accent/5 border-b border-outline-variant/10 transition-colors" href="#">
+<span class="text-on-surface group-hover:text-red-accent transition-colors font-label-md">0-Day Alerts</span>
+<span class="font-code-sm text-[10px] bg-red-accent/10 text-red-accent px-2 py-0.5">09</span>
+</a>
+</li>
+<li class="">
+<a class="flex justify-between items-center group p-3 hover:bg-red-accent/5 border-b border-outline-variant/10 transition-colors" href="#">
+<span class="text-on-surface group-hover:text-red-accent transition-colors font-label-md">Tactical Guides</span>
+<span class="font-code-sm text-[10px] bg-red-accent/10 text-red-accent px-2 py-0.5">15</span>
+</a>
+</li>
+<li class="">
+<a class="flex justify-between items-center group p-3 hover:bg-red-accent/5 transition-colors" href="#">
+<span class="text-on-surface group-hover:text-red-accent transition-colors font-label-md">Lab Reports</span>
+<span class="font-code-sm text-[10px] bg-red-accent/10 text-red-accent px-2 py-0.5">32</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Subscription (Academy Sidebar) -->
+<div class="tactical-border bg-red-accent/5 p-6 border-red-accent/30 shadow-xl">
+<h4 class="font-label-md text-label-md font-bold text-red-accent mb-4 flex items-center gap-3 uppercase tracking-widest">
+<span class="material-symbols-outlined">rss_feed</span>
+                    FEED DE INTELIGENCIA
+                </h4>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Alertas críticas directo a tu terminal. Sin ruido, solo data técnica.</p>
+<div class="space-y-4">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-red-accent/50 text-sm">alternate_email</span>
+<input class="w-full bg-background/50 border border-outline-variant/30 focus:border-red-accent focus:ring-0 text-white font-code-sm no-radius pl-10 pr-3 py-3 text-xs" placeholder="OPERATOR@DOMAIN.COM" type="email">
+</div>
+<button class="w-full bg-red-accent text-white py-4 no-radius font-bold uppercase text-xs tracking-widest hover:bg-red-700 transition-all flex items-center justify-center gap-2 glitch-hover">
+                        UNIRSE AL CANAL
+                        <span class="material-symbols-outlined text-sm">sensors</span>
+</button>
+</div>
+</div>
+<!-- Latest Intel (Academy Sidebar) -->
+<div class="tactical-border bg-surface-container-lowest/90 backdrop-blur-sm p-6 shadow-xl">
+<h4 class="font-label-md text-label-md font-bold text-red-accent mb-6 flex items-center gap-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-red-accent">analytics</span>
+                    INDICADORES RECIENTES
+                </h4>
+<div class="space-y-4">
+<div class="p-4 border border-outline-variant/20 hover:border-red-accent/40 transition-colors cursor-pointer group">
+<p class="font-code-sm text-red-accent mb-2 flex justify-between items-center">
+                            CVE-2024-9981
+                            <span class="material-symbols-outlined text-[16px] group-hover:rotate-45 transition-transform">north_east</span>
+</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Kernel Privilege Escalation - Linux v6.1</p>
+</div>
+<div class="p-4 border border-outline-variant/20 hover:border-red-accent/40 transition-colors cursor-pointer group">
+<p class="font-code-sm text-tertiary mb-2 flex justify-between items-center">
+                            MALWARE_SIG_A4F
+                            <span class="material-symbols-outlined text-[16px] group-hover:rotate-45 transition-transform">north_east</span>
+</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">New variant of DarkGate identified</p>
+</div>
+</div>
+</div>
+<!-- Animated Radar Widget (Academy Interaction Style) -->
+<div class="h-48 tactical-border overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700 cursor-crosshair group">
+<div class="absolute inset-0 bg-red-accent/5 z-10"></div>
+<div class="absolute inset-0 kinetic-scanline"></div>
+<div class="w-full h-full bg-background flex flex-col items-center justify-center relative">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border border-red-accent/30 animate-[ping_2s_infinite]"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-red-accent group-hover:scale-125 transition-transform">radar</span>
+</div>
+</div>
+<p class="font-code-sm text-[10px] text-red-accent mt-4 tracking-[0.2em] animate-pulse">THREAT_SCANNER_ACTIVE</p>
+</div>
+</div>
+</aside>
+</section>
+</main>
+<!-- Footer (Official Design System) -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 w-full pt-20 pb-10 relative overflow-hidden"><div class="bg-red-accent py-2 px-margin-desktop overflow-hidden relative z-20"><div class="flex justify-between items-center max-w-container-max mx-auto"><div class="flex items-center gap-4 animate-pulse"><span class="material-symbols-outlined text-white text-sm">warning</span><span class="text-white font-code-sm text-[10px] tracking-[0.3em] uppercase">LÍNEA DE EMERGENCIA 24/7: +34 900 RED BOX</span></div><div class="hidden md:flex items-center gap-8"><span class="text-white/80 font-code-sm text-[10px] tracking-widest uppercase">ESTADO DEL SISTEMA: OPERACIONAL</span><div class="flex gap-1"><div class="w-1 h-3 bg-white/40"></div><div class="w-1 h-3 bg-white/40"></div><div class="w-1 h-3 bg-white"></div></div></div></div></div>
+<div class="absolute inset-0 tactical-grid opacity-5"></div>
+<div class="max-w-container-max mx-auto px-margin-desktop scroll-reveal">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Column 1: Brand -->
+<div class="space-y-6"><div class="flex items-center gap-3 mb-6"><img alt="REDBOX Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwppe-WJdZzgF-kC5Inu3S5u5AKRCEiE7dJ_dciURfSL6JmhRvQRhbulj2h5TqUaSif75zC2jfiDjHvOES-87KjLt_f2TB5WCVYK5qXLAN3OCZ5v60MjfM_RvKHR0Zgsi3Z5rRIdZx_cl1rPcbA_dhwSaU4Sg-KGUeTUI5K0xTyViv3fnNnf_QnmXABu7eiZdaP1SONGmpTBP8fYE6iojQso8URItanYmMRvU_G8AhXTjOdMFxRDiFVcoho5zVpgKhR7Q"><span class="font-headline-md text-2xl font-black tracking-tighter text-primary uppercase">REDBOX</span></div><p class="text-on-surface-variant font-body-md leading-relaxed mb-8">Defensa ofensiva y formación de élite. Neutralizamos adversarios antes de que comprometan su activo más valioso.</p><div class="flex gap-4"><a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-red-accent hover:border-red-accent/30 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a><a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-red-accent hover:border-red-accent/30 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">hub</span></a><a class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-red-accent hover:border-red-accent/30 transition-all" href="#"><span class="material-symbols-outlined text-[20px]">terminal</span></a></div></div>
+<!-- Column 2: Servicios -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Servicios</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Pentesting</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Red Team</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Cloud Security</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Wireless Audit</a></li>
+</ul>
+</div>
+<!-- Column 3: Recursos -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Recursos</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Comunidad</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Blog</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Certificaciones</a></li>
+</ul>
+</div>
+<!-- Column 4: Contacto -->
+<div>
+<h4 class="font-label-md text-primary uppercase tracking-[0.2em] mb-8 font-bold">Contacto</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<span class="text-on-surface-variant font-body-md">info@redbox.security</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">call</span>
+<span class="text-on-surface-variant font-body-md">+34 900 RED BOX</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<span class="text-on-surface-variant font-body-md">Sede Central de Operaciones<br>Madrid, España</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-10 flex flex-col lg:flex-row justify-between items-center gap-6">
+<div class="text-on-surface-variant/60 font-label-sm uppercase tracking-widest text-center lg:text-left">
+                © 2024 REDBOX CYBERSECURITY. TODOS LOS DERECHOS RESERVADOS.
+            </div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Privacy Protocol</a>
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="font-label-sm text-on-surface-variant/80 hover:text-primary transition-colors uppercase tracking-widest" href="#">Legal Notice</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+    // Terminal status micro-interactions
+    const terminalLines = [
+        "[SYSTEM] Patching vulnerabilities...",
+        "[THREAT] Port scan detected from 192.168.1.105",
+        "[INTEL] New 0-day disclosed in WebKit",
+        "[MALWARE] C2 heartbeat identified: 0x88F...",
+        "[AUTH] Unauthorized access attempt blocked",
+        "[SCAN] Sector 7G integrity: 99.8%"
+    ];
+    
+    let currentIndex = 0;
+    const systemText = document.querySelector('.terminal-scroll');
+    
+    setInterval(() => {
+        if (systemText) {
+            systemText.style.animation = 'none';
+            systemText.offsetHeight; // trigger reflow
+            systemText.innerText = terminalLines[currentIndex];
+            systemText.style.animation = 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite';
+            currentIndex = (currentIndex + 1) % terminalLines.length;
+        }
+    }, 5000);
+</script>
+
+
+</body></html>

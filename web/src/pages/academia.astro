@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/academia/Hero.astro';
+import PillarsGrid from '../components/sections/academia/PillarsGrid.astro';
+import FeaturedCRTA from '../components/sections/academia/FeaturedCRTA.astro';
+import RCOFCard from '../components/sections/academia/RCOFCard.astro';
+import WebAuditCard from '../components/sections/academia/WebAuditCard.astro';
+import BurpSuiteWorkshop from '../components/sections/academia/BurpSuiteWorkshop.astro';
+import CryptoVerification from '../components/sections/academia/CryptoVerification.astro';
+import SupportCTA from '../components/sections/academia/SupportCTA.astro';
+---
+
+<Layout
+  title="Academia"
+  description="Formación de élite en ciberseguridad ofensiva: Certificaciones RedBox, CRTA con Cyberwarfare Labs, RCOF y BurpSuite Workshop."
+>
+  <fragment slot="header"><Nav /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <Hero />
+  <PillarsGrid />
+  <main class="py-10 bg-surface-container-lowest relative overflow-hidden">
+    <div class="container mx-auto px-margin-desktop">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <FeaturedCRTA />
+        <RCOFCard />
+        <WebAuditCard />
+        <BurpSuiteWorkshop />
+      </div>
+    </div>
+  </main>
+  <CryptoVerification />
+  <SupportCTA />
+</Layout>

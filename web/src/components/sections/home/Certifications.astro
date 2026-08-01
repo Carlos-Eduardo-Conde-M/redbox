@@ -1,0 +1,55 @@
+---
+/**
+ * Home Certifications — Sección 6.
+ * Panel framed de badges + banner macro de hardware con `SEC_NODE` overlay.
+ */
+---
+
+<section
+  class="py-24 bg-surface px-margin-desktop border-t border-outline-variant/30"
+  id="certificaciones"
+  aria-labelledby="cert-title"
+>
+  <div class="max-w-container-max mx-auto scroll-reveal">
+    <div class="text-center mb-16">
+      <h2 class="font-label-sm text-primary uppercase tracking-[0.4em] mb-4 font-bold">
+        Credenciales Profesionales
+      </h2>
+      <h3
+        id="cert-title"
+        class="font-headline-md text-headline-md text-on-background uppercase"
+      >
+        Respaldados por los Estándares de Élite de la Industria Global
+      </h3>
+    </div>
+
+    <div class="flex justify-center items-center py-8">
+      <div class="relative group max-w-4xl w-full sharp-border p-2 bg-black/40 backdrop-blur-sm">
+        <div class="scanner-line"></div>
+        <img
+          alt="Certificaciones Profesionales"
+          class="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-700 shadow-[0_0_30px_rgba(255,26,26,0.2)] group-hover:shadow-[0_0_50px_rgba(255,26,26,0.4)]"
+          src="/image/home-certifications.png"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-primary opacity-50" aria-hidden="true"></div>
+        <div class="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-primary opacity-50" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="mt-16 sharp-border h-80 overflow-hidden group">
+      <div class="scanner-line"></div>
+      <img
+        alt="Macro hardware de servidor con luces rojas"
+        class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-1000"
+        src="/image/home-server-hardware-macro.png"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="absolute top-4 left-6 font-mono text-[10px] text-primary bg-black/60 px-2 py-1">
+        SEC_NODE: [REDACTED] // STATUS: NOMINAL
+      </div>
+    </div>
+  </div>
+</section>

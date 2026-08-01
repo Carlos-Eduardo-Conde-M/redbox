@@ -1,0 +1,70 @@
+---
+/**
+ * Servicios Hero — Sección 1.
+ * Badge Protocol + headline glitch + tech readouts animados.
+ */
+---
+
+<section
+  class="relative min-h-[50vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant/30"
+  aria-labelledby="servicios-hero-title"
+>
+  <div class="absolute inset-0 tactical-grid-fine opacity-20" aria-hidden="true"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-background/80"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto py-20 scroll-reveal">
+    <div
+      class="inline-flex items-center gap-3 px-4 py-1.5 bg-primary/5 border border-primary/40 mb-8 animate-pulse-slow"
+    >
+      <span class="font-label-sm text-primary uppercase tracking-[0.3em] font-bold">
+        Protocol: Elite_Intelligence // Active
+      </span>
+    </div>
+
+    <h1
+      id="servicios-hero-title"
+      class="font-headline-lg text-headline-lg md:text-[72px] mb-4 leading-[0.9] uppercase tracking-tighter neon-glow"
+    >
+      NUESTROS <span class="text-primary-container bg-white/5 px-4 border-x-4 border-primary">SERVICIOS</span>
+    </h1>
+
+    <div class="h-px w-24 bg-primary mx-auto mb-8 shadow-[0_0_10px_#ff1a1a]" aria-hidden="true"></div>
+
+    <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed uppercase tracking-wide font-medium">
+      [OPERACIONES_OFENSIVAS]: PRECISIÓN TÉCNICA. PENSAMIENTO TÁCTICO. NEUTRALIZACIÓN DE AMENAZAS.
+    </p>
+  </div>
+
+  <!-- Left readouts -->
+  <div class="absolute bottom-6 left-6 hidden xl:block">
+    <div class="font-label-sm text-primary/40 space-y-1 text-left font-mono">
+      <div class="flicker-anim" style="animation-delay: 0s;">
+        SYS_STATUS: <span class="text-primary">NOMINAL</span>
+      </div>
+      <div class="flicker-anim" style="animation-delay: 0.4s;">
+        SEC_LEVEL: <span class="text-primary">ALPHA_7</span>
+      </div>
+      <div class="flicker-anim" style="animation-delay: 0.8s;">
+        ENCRYPTION: <span class="text-primary">AES_256_GCM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right readouts -->
+  <div class="absolute bottom-6 right-6 hidden xl:block">
+    <div class="font-label-sm text-primary/40 space-y-1 text-right font-mono">
+      <div class="flicker-anim" style="animation-delay: 1.2s;">
+        THREAT_SCAN: <span class="text-primary">0% FOUND</span>
+      </div>
+      <div class="flicker-anim" style="animation-delay: 1.6s;">
+        UPTIME: <span class="text-primary">99.998%</span>
+      </div>
+      <div class="flicker-anim" style="animation-delay: 2s;">
+        REGION: <span class="text-primary">GLOBAL_OP</span>
+      </div>
+    </div>
+  </div>
+</section>

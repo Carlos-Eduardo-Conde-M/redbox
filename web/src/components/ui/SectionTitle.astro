@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  align?: 'left' | 'center';
+  class?: string;
+}
+const { title, subtitle, badge, align = 'left', class: className } = Astro.props;
+---
+
+<div class={['space-y-4', align === 'center' && 'text-center', className].filter(Boolean).join(' ')}>
+  {badge && (
+    <span class="inline-block font-mono text-label-sm text-primary uppercase tracking-[0.3em] mb-2">
+      {badge}
+    </span>
+  )}
+  <h2 class="font-display text-headline-lg text-on-background-strong font-black tracking-tight">
+    {title}
+  </h2>
+  {subtitle && (
+    <p class="max-w-2xl text-body-md text-on-surface-variant leading-relaxed">
+      {subtitle}
+    </p>
+  )}
+</div>

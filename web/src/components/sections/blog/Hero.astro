@@ -1,0 +1,124 @@
+---
+---
+
+<section
+  class="relative min-h-[60vh] pt-32 pb-20 flex items-center overflow-hidden "
+  style="background-image: url('/image/futuristic_industrial_circuit_board_background_with_glowing_red_neon_traces.png'); background-size: cover; background-position: center;"
+  aria-labelledby="blog-hero-title"
+>
+  <div class="absolute inset-0 bg-background/80 backdrop-blur-sm" aria-hidden="true"></div>
+  <div class="absolute inset-0 tactical-grid-fine opacity-15" aria-hidden="true"></div>
+
+  <div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center scroll-reveal">
+    <div class="space-y-6">
+      <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 px-3 py-1">
+        <span class="w-2 h-2 bg-primary animate-pulse" aria-hidden="true"></span>
+        <span class="font-mono text-[12px] text-primary tracking-widest uppercase">LIVE INTELLIGENCE FEED</span>
+      </div>
+      <h1 id="blog-hero-title" class="font-headline-lg text-display-lg leading-tight uppercase text-white">
+        Reportes Desde El <span class="text-primary">Frente</span>
+      </h1>
+      <p class="text-on-surface-variant max-w-3xl font-body-md leading-relaxed border-l-2 border-primary/30 pl-6">
+        Compartiendo conocimiento y análisis del frente de batalla. Espacio dedicado a la investigación técnica, análisis de malware y tácticas de evasión de última generación.
+      </p>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <button class="bg-primary text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-primary/80 transition-all glitch-text-simple flex items-center gap-2" type="button">
+          EXPLORAR ARCHIVOS
+          <span class="material-symbols-outlined text-[18px]">archive</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SEC_MONITOR terminal panel -->
+    <div class="hidden lg:block">
+      <div class="sharp-border bg-surface-container-lowest/90 p-8 shadow-2xl relative">
+        <div class="scanner-line"></div>
+        <div class="flex justify-between border-b border-outline-variant/30 pb-4 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">terminal</span>
+            <span class="font-mono text-primary text-[12px]">SEC_MONITOR_v4.2</span>
+          </div>
+          <span class="font-mono text-on-surface-variant text-[12px]">NODE: 71.22.09.AX</span>
+        </div>
+        <div class="space-y-4 font-mono text-[12px]">
+          <p class="text-tertiary terminal-scroll" data-terminal-line>[SYSTEM] Initializing threat hunt protocol...</p>
+          <p class="text-on-surface-variant opacity-80">> Scanning network sectors 0x00 to 0x4F</p>
+          <p class="text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">warning</span>
+            CRITICAL: Buffer overflow detected in SCADA logic
+          </p>
+          <div class="w-full h-1.5 bg-surface-container-high mt-4">
+            <div class="h-full bg-primary w-3/4 animate-pulse"></div>
+          </div>
+          <div class="grid grid-cols-8 gap-1 pt-6 opacity-40" aria-hidden="true">
+            <div class="h-4 bg-primary animate-pulse"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-primary animate-pulse"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-primary animate-pulse"></div>
+            <div class="h-4 bg-primary animate-pulse"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+            <div class="h-4 bg-outline-variant/20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .terminal-scroll {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--color-primary);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-primary); }
+  }
+</style>
+
+<script>
+  (function () {
+    const lines = [
+      '[SYSTEM] Initializing threat hunt protocol...',
+      '[THREAT] Port scan detected from 192.168.1.105',
+      '[INTEL] New 0-day disclosed in WebKit',
+      '[MALWARE] C2 heartbeat identified: 0x88F...',
+      '[AUTH] Unauthorized access attempt blocked',
+      '[SCAN] Sector 7G integrity: 99.8%',
+    ];
+    let i = 0;
+    const el = document.querySelector('[data-terminal-line]') as HTMLElement | null;
+    if (!el) return;
+    setInterval(() => {
+      el.style.animation = 'none';
+      void el.offsetHeight;
+      el.textContent = lines[i];
+      el.style.animation = 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite';
+      i = (i + 1) % lines.length;
+    }, 5000);
+  })();
+</script>

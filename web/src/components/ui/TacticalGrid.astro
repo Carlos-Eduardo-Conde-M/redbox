@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+  children?: any;
+}
+const { class: className } = Astro.props;
+---
+
+<div class={['relative', className].filter(Boolean).join(' ')}>
+  <div class="absolute inset-0 tactical-grid-fine opacity-5" aria-hidden="true"></div>
+  <slot />
+</div>

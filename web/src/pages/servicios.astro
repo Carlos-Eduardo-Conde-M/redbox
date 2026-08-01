@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/servicios/Hero.astro';
+import ServicesGrid from '../components/sections/servicios/ServicesGrid.astro';
+import CTA from '../components/sections/servicios/CTA.astro';
+---
+
+<Layout
+  title="Servicios"
+  description="Pentesting, Red Team, Ethical Hacking, Auditorías y Cloud Security por RedBox Cybersecurity."
+>
+  <fragment slot="header"><Nav /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <Hero />
+  <ServicesGrid />
+  <CTA />
+</Layout>

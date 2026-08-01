@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/blog/Hero.astro';
+import FeaturedArticle from '../components/sections/blog/FeaturedArticle.astro';
+import ArticlesGrid from '../components/sections/blog/ArticlesGrid.astro';
+import Sidebar from '../components/sections/blog/Sidebar.astro';
+---
+
+<Layout
+  title="Blog"
+  description="RedBox — Front Line Intelligence. Reportes desde el frente: análisis de malware, 0-day disclosures, guías tácticas y reportes de laboratorio."
+>
+  <fragment slot="header"><Nav /></fragment>
+  <fragment slot="footer"><Footer /></fragment>
+
+  <Hero />
+
+  <section class="py-20 px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10" aria-label="Archivo de reportes">
+    <div class="lg:col-span-8 space-y-12">
+      <FeaturedArticle />
+      <ArticlesGrid />
+    </div>
+    <Sidebar />
+  </section>
+</Layout>

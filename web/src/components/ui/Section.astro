@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  children?: any;
+}
+const { class: className } = Astro.props;
+---
+
+<section class={['relative', className].filter(Boolean).join(' ')}>
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <slot />
+  </div>
+</section>

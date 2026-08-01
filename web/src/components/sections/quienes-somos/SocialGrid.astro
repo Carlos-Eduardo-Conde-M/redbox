@@ -1,0 +1,42 @@
+---
+const SOCIAL = [
+  { icon: 'hub', label: 'NETWORK UPDATES', name: 'LinkedIn', href: '#' },
+  { icon: 'music_note', label: 'VIRAL INTEL', name: 'TikTok', href: '#' },
+  { icon: 'public', label: 'COMMUNITY HUB', name: 'Facebook', href: '#' },
+  { icon: 'play_circle', label: 'VIDEO BRIEFINGS', name: 'YouTube', href: '#' },
+];
+---
+
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-primary/20" aria-labelledby="qs-social-title">
+  <div class="max-w-[1400px] mx-auto text-center">
+    <div class="scroll-reveal">
+      <p class="font-mono text-primary uppercase tracking-[.4em] mb-4 text-[12px]">CANALES_INTELIGENCIA</p>
+      <h2 id="qs-social-title" class="font-headline-lg text-display-lg text-on-surface uppercase mb-8">
+        NUESTRAS <span class="text-primary italic">REDES SOCIALES</span>
+      </h2>
+      <p class="font-body-md text-on-surface/60 max-w-2xl mx-auto mb-16 italic">
+        Siga nuestros canales de inteligencia para actualizaciones en tiempo real sobre el panorama de amenazas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 scroll-reveal">
+      {SOCIAL.map((s) => (
+        <a
+          class="group bento-card p-10 sharp-border flex flex-col items-center gap-6 hover:translate-y-[-8px] transition-transform no-underline"
+          href={s.href}
+          aria-label={`RedBox en ${s.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+            <span class="material-symbols-outlined text-4xl" aria-hidden="true">{s.icon}</span>
+          </div>
+          <div>
+            <p class="font-mono text-primary uppercase tracking-widest mb-1 font-bold text-[12px]">{s.label}</p>
+            <h4 class="font-headline-sm text-xl text-on-surface uppercase">{s.name}</h4>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
