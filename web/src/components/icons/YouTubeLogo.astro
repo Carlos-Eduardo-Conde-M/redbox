@@ -5,7 +5,7 @@ interface Props {
 }
 const { class: className, size = 24 } = Astro.props;
 ---
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class={className} width={size} height={size}>
-  <path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.68 4 12 4 12 4s-6.68 0-8.6.42a2.84 2.84 0 00-1.94 1.97C1.01 8.31 1 12 1 12s.01 3.69.46 5.58A2.84 2.84 0 003.4 19.56c1.92.46 8.6.46 8.6.46s6.68 0 8.6-.46a2.78 2.78 0 001.94-1.96c.45-1.89.46-5.58.46-5.58s-.01-3.69-.46-5.58z" fill="#FF0000"/>
-  <path d="M9.68 14.6V9l5.86 2.8L14.14 15.3z" fill="var(--color-background,#0a0b0d)"/>
+<svg viewBox="0 0 24 24" class={className} width={size} height={size} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.68 4 12 4 12 4s-6.68 0-8.6.42a2.84 2.84 0 00-1.94 1.97C1.01 8.31 1 12 1 12s.01 3.69.46 5.58a2.84 2.84 0 001.94 1.97c1.92.45 8.6.45 8.6.45s6.68 0 8.6-.45a2.84 2.84 0 001.94-1.97c.45-1.89.46-5.58.46-5.58s-.01-3.69-.46-5.58z"/>
+  <path fill="var(--color-background,#0a0b0d)" d="M10 15.27V8.73l5.7 3.27z"/>
 </svg>
