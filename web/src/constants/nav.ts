@@ -31,11 +31,11 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: 'Facebook', href: '#', icon: 'facebook', customIcon: 'facebook' },
-  { label: 'TikTok', href: '#', icon: 'tiktok', customIcon: 'tiktok' },
-  { label: 'LinkedIn', href: '#', icon: 'linkedin', customIcon: 'linkedin' },
-  { label: 'YouTube', href: '#', icon: 'youtube', customIcon: 'youtube' },
-  { label: 'WhatsApp', href: '#', icon: 'whatsapp', customIcon: 'whatsapp' },
+  { label: 'Facebook', href: '#', icon: 'groups' },
+  { label: 'TikTok', href: '#', icon: 'music_video' },
+  { label: 'LinkedIn', href: '#', icon: 'work' },
+  { label: 'YouTube', href: '#', icon: 'play_circle' },
+  { label: 'WhatsApp', href: '#', icon: 'chat' },
 ];
 
 export const LEGAL_LINKS: NavLink[] = [

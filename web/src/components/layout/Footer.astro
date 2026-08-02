@@ -2,19 +2,6 @@
 import { LEGAL_LINKS, SOCIAL_LINKS, FOOTER_COLUMNS } from '../../constants/nav';
 import { COMPANY } from '../../constants/company';
 import { SITE } from '../../config/site';
-import FacebookLogo from '../icons/FacebookLogo.astro';
-import TikTokLogo from '../icons/TikTokLogo.astro';
-import LinkedInLogo from '../icons/LinkedInLogo.astro';
-import YouTubeLogo from '../icons/YouTubeLogo.astro';
-import WhatsAppLogo from '../icons/WhatsAppLogo.astro';
-
-const SOCIAL_ICON_MAP: Record<string, any> = {
-  facebook: FacebookLogo,
-  tiktok: TikTokLogo,
-  linkedin: LinkedInLogo,
-  youtube: YouTubeLogo,
-  whatsapp: WhatsAppLogo,
-};
 ---
 
 <footer class="bg-surface-dim border-t border-outline-variant/30 w-full pt-20 pb-10 relative">
@@ -37,25 +24,17 @@ const SOCIAL_ICON_MAP: Record<string, any> = {
         <p class="text-on-surface-variant font-body-md leading-relaxed">
           Defensa ofensiva y formación de élite. Neutralizamos adversarios antes de que comprometan su activo más valioso.
         </p>
-        <nav aria-label="Redes sociales">
+<nav aria-label="Redes sociales">
           <div class="flex flex-wrap gap-3">
             {SOCIAL_LINKS.map((link) => (
               <a
-                class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 text-on-surface-variant hover:text-primary hover:border-primary/50 transition-all"
+                class="w-10 h-10 flex items-center justify-center bg-surface-container-high border border-outline/10 opacity-70 hover:opacity-100 hover:border-primary/50 transition-all"
                 href={link.href}
                 aria-label={link.label}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {
-                (() => {
-                  const iconKey = link.customIcon ?? link.icon;
-                  const IconComponent = SOCIAL_ICON_MAP[iconKey];
-                  return IconComponent
-                    ? <IconComponent class="w-5 h-5 fill-current" size={20} />
-                    : <span class="material-symbols-outlined text-[20px]">{link.icon}</span>;
-                })()
-              }
+                <span class="material-symbols-outlined text-on-surface-variant text-[22px]" aria-hidden="true">{link.icon}</span>
               </a>
             ))}
           </div>
